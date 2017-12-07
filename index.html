@@ -282,7 +282,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/07/reactNote/" itemprop="url">React 笔记</a></h1>
+                <a class="post-title-link" href="/2017/12/07/reactNote/" itemprop="url">React笔记-使用JSX</a></h1>
         
 
         <div class="post-meta">
@@ -344,8 +344,9 @@
       
         
           
-            <h1 id="React笔记"><a href="#React笔记" class="headerlink" title="React笔记"></a>React笔记</h1><blockquote>
-<p>JSX(js xml):react中的语法糖</p>
+            <figure class="highlight plain"><figcaption><span>[title] [] [url] [link text]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
+<h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><blockquote>
+<p>JSX(js xml)是React中的语法糖</p>
 </blockquote>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class A extends React.Componet &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;app&quot;&gt;</span><br><span class="line">                This is JSX</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="JSX本身其实也是一种表达式"><a href="#JSX本身其实也是一种表达式" class="headerlink" title="JSX本身其实也是一种表达式:"></a>JSX本身其实也是一种表达式:</h2><p>在编译之后呢，JSX 其实会被转化为普通的 JavaScript 对象。<br>意味着可以把它赋值给变量，当做函数传入和返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var a = &lt;div&gt;exp&lt;/div&gt;; </span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&quot;app&quot;&gt;</span><br><span class="line">            &#123;a&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
