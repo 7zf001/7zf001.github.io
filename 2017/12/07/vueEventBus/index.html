@@ -94,16 +94,17 @@
 
 
 
-<meta name="description" content="向往全栈的路上">
-<meta property="og:type" content="website">
+<meta name="description" content="title: Vue 用 event bus 解决非父子组件的数据传递date: 2017-08-16 17:52categories:  JavaScript Vuetags:  JavaScript Vue   背景 在不使用vuex的情况下，实现非父子组件的数据传递。当然你项目中使用着vuex就不必要再用even">
+<meta property="og:type" content="article">
 <meta property="og:title" content="谭大仙">
-<meta property="og:url" content="https://7zf001.github.io/categories/JavaScript/React/index.html">
+<meta property="og:url" content="https://7zf001.github.io/2017/12/07/vueEventBus/index.html">
 <meta property="og:site_name" content="谭大仙">
-<meta property="og:description" content="向往全栈的路上">
+<meta property="og:description" content="title: Vue 用 event bus 解决非父子组件的数据传递date: 2017-08-16 17:52categories:  JavaScript Vuetags:  JavaScript Vue   背景 在不使用vuex的情况下，实现非父子组件的数据传递。当然你项目中使用着vuex就不必要再用event bus了。  使用方法我们需要有一个 Vue 实例来充当通信媒介的作用 创">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-07T07:49:43.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谭大仙">
-<meta name="twitter:description" content="向往全栈的路上">
+<meta name="twitter:description" content="title: Vue 用 event bus 解决非父子组件的数据传递date: 2017-08-16 17:52categories:  JavaScript Vuetags:  JavaScript Vue   背景 在不使用vuex的情况下，实现非父子组件的数据传递。当然你项目中使用着vuex就不必要再用event bus了。  使用方法我们需要有一个 Vue 实例来充当通信媒介的作用 创">
 
 
 
@@ -132,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="https://7zf001.github.io/categories/JavaScript/React/"/>
+  <link rel="canonical" href="https://7zf001.github.io/2017/12/07/vueEventBus/"/>
 
 
 
 
 
-  <title>分类: React | 谭大仙</title>
+  <title> | 谭大仙</title>
   
 
 
@@ -163,7 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,55 +248,168 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>React<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2017/12/07/vueEventBus/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谭大仙">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭大仙">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/07/reactNote/" itemprop="url">
-              
-                <span itemprop="name">JSX - React 笔记</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T13:05:00+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T15:42:47+08:00">
+                2017-12-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/07/vueEventBus/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/07/vueEventBus/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: Vue 用 event bus 解决非父子组件的数据传递<br>date: 2017-08-16 17:52<br>categories:</p>
+<ul>
+<li>JavaScript</li>
+<li>Vue<br>tags: </li>
+<li>JavaScript</li>
+<li>Vue</li>
+</ul>
+<hr>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><blockquote>
+<p>在不使用vuex的情况下，实现非父子组件的数据传递。<br>当然你项目中使用着vuex就不必要再用event bus了。</p>
+</blockquote>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>我们需要有一个 Vue 实例来充当通信媒介的作用</p>
+<p>创建一个 src/bus.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// src/bus.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">export default new Vue()</span><br></pre></td></tr></table></figure></p>
+<p>在<em>组件A</em>中使用 <code>$on(eventName)</code> 监听事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Bus from &apos;src/bus&apos;  // 引入bus.js文件</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    // $on</span><br><span class="line">    Bus.$on(&apos;setTitle&apos;, text =&gt; &#123;</span><br><span class="line">      this.title = text;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<em>组件B</em>中使用 <code>$emit(eventName)</code> 触发事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import Bus from &apos;src/bus&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  methods:&#123;</span><br><span class="line">    emitTitle () &#123;</span><br><span class="line">      Bus.$emit(&apos;setTitle&apos;, &apos;我的标题&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这个方法只是利用vue实例实现通讯。用$on、$emit来监听和触发事件。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/reactNote/" rel="next" title="JSX - React 笔记">
+                <i class="fa fa-chevron-left"></i> JSX - React 笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -303,6 +417,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/12/07/vueEventBus/"
+           data-title="" data-url="https://7zf001.github.io/2017/12/07/vueEventBus/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -323,8 +445,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/default_avatar.jpg"
@@ -410,6 +541,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -523,10 +670,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
