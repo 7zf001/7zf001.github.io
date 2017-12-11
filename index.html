@@ -411,6 +411,7 @@
 <li>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写，描述弹性项目的整体的伸缩性。</li>
 </ul>
 </blockquote>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p><code>flex-grow</code> 属性定义弹性盒子项（flex item）的拉伸因子。<br>可理解成弹性盒子项<em>占据</em>剩余空间的比例。<br>若flex容器width为400px，容器内有3个width为100px弹性盒子项，这时<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow1.png" alt="flex-grow1"><br>当对第三个元素添加flex-grow:1，此元素width会扩展剩余的空间，因为其他两个元素默认flex-grow为0,0+0+1=1，第三个元素占100%比例（占用剩余的空间比例）。<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow2.png" alt="flex-grow2"><br>若把第二个元素也添加flex-grow:1,此时0+1+1=2，第二、三元素各占50%。<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow3.png" alt="flex-grow3"></p>
 <h1 id="弹性盒子相关属性"><a href="#弹性盒子相关属性" class="headerlink" title="弹性盒子相关属性"></a>弹性盒子相关属性</h1><h2 id="不影响弹性盒子的属性"><a href="#不影响弹性盒子的属性" class="headerlink" title="不影响弹性盒子的属性"></a>不影响弹性盒子的属性</h2><p>由于弹性盒子使用了不同的布局算法，某些属性用在弹性容器上没有意义：</p>
 <blockquote>
 <ul>
