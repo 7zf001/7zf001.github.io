@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, JavaScript, React, Vue, 7zf001" />
+  <meta name="keywords" content="css,flex," />
 
 
 
@@ -94,17 +94,20 @@
 
 
 
-<meta name="description" content="一名自学的程序员">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://7zf001.github.io/about/index.html">
+<meta name="description" content="使用方法弹性盒子属性  主轴(main axis)，主轴区域(main dimension)。弹性容器的主轴指的是弹性元素主要沿着哪个方向布局。它在主轴区域中延伸。 主轴起点(main-Start)，主轴终点(main-end)。弹性元素被放置于容器中从主轴起点到主轴终点放置。-主轴尺寸(main size)，主轴尺寸">
+<meta name="keywords" content="css,flex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex 弹性布局入门">
+<meta property="og:url" content="https://7zf001.github.io/2017/12/11/flex/index.html">
 <meta property="og:site_name" content="谭大仙">
-<meta property="og:description" content="一名自学的程序员">
+<meta property="og:description" content="使用方法弹性盒子属性  主轴(main axis)，主轴区域(main dimension)。弹性容器的主轴指的是弹性元素主要沿着哪个方向布局。它在主轴区域中延伸。 主轴起点(main-Start)，主轴终点(main-end)。弹性元素被放置于容器中从主轴起点到主轴终点放置。-主轴尺寸(main size)，主轴尺寸属性(main size property)。一个弹性元素的主轴尺寸指的是其在主">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T09:44:33.202Z">
+<meta property="og:image" content="http://saki007ster.github.io/public/images/flex-container.png">
+<meta property="og:updated_time" content="2017-12-11T06:29:58.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="一名自学的程序员">
+<meta name="twitter:title" content="flex 弹性布局入门">
+<meta name="twitter:description" content="使用方法弹性盒子属性  主轴(main axis)，主轴区域(main dimension)。弹性容器的主轴指的是弹性元素主要沿着哪个方向布局。它在主轴区域中延伸。 主轴起点(main-Start)，主轴终点(main-end)。弹性元素被放置于容器中从主轴起点到主轴终点放置。-主轴尺寸(main size)，主轴尺寸属性(main size property)。一个弹性元素的主轴尺寸指的是其在主">
+<meta name="twitter:image" content="http://saki007ster.github.io/public/images/flex-container.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://7zf001.github.io/about/"/>
+  <link rel="canonical" href="https://7zf001.github.io/2017/12/11/flex/"/>
 
 
 
 
 
-  <title>关于我 | 谭大仙</title>
+  <title>flex 弹性布局入门 | 谭大仙</title>
   
 
 
@@ -260,34 +263,183 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2017/12/11/flex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谭大仙">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭大仙">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于我</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>一名自学的程序员</p>
-
+          <h1 class="post-title" itemprop="name headline">flex 弹性布局入门</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T14:25:00+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/11/flex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/11/flex/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><h1 id="弹性盒子属性"><a href="#弹性盒子属性" class="headerlink" title="弹性盒子属性"></a>弹性盒子属性</h1><p><img src="http://saki007ster.github.io/public/images/flex-container.png" alt=""></p>
+<ul>
+<li>主轴(main axis)，主轴区域(main dimension)。弹性容器的主轴指的是弹性元素主要沿着哪个方向布局。它在主轴区域中延伸。</li>
+<li>主轴起点(main-Start)，主轴终点(main-end)。弹性元素被放置于容器中从主轴起点到主轴终点放置。<br>-主轴尺寸(main size)，主轴尺寸属性(main size property)。一个弹性元素的主轴尺寸指的是其在主轴区域内的长度。其主轴尺寸属性指的是其对应的属性。<br>-侧轴(cross axis)，侧轴区域(cross dimension)。侧轴垂直于主轴。它在侧轴区域中延伸。<br>-侧轴起点(cross-Start)，侧轴终点(cross-end)。浮动行被元素填充，并且在容器中沿侧轴方向从起点向终点分布。<br>-侧轴尺寸(cross size)，侧轴尺寸属性(cross size property)。一个弹性元素的侧轴尺寸指的是其在侧轴区域内的长度。其侧轴尺寸属性指的是其对应的属性</li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/flex/" rel="tag"># flex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/reactNote/" rel="next" title="JSX - React 笔记">
+                <i class="fa fa-chevron-left"></i> JSX - React 笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -327,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/default_avatar.jpg"
@@ -414,6 +575,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子属性"><span class="nav-number">2.</span> <span class="nav-text">弹性盒子属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -527,10 +704,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -551,9 +728,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://7zf001.github.io/about/index.html';
-          this.page.identifier = 'about/index.html';
-          this.page.title = '关于我';
+          this.page.url = 'https://7zf001.github.io/2017/12/11/flex/';
+          this.page.identifier = '2017/12/11/flex/';
+          this.page.title = 'flex 弹性布局入门';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://7zf.disqus.com/embed.js';
