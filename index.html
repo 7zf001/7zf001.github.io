@@ -384,6 +384,7 @@
 <h2 id="弹性容器-Flex-container"><a href="#弹性容器-Flex-container" class="headerlink" title="弹性容器(Flex container)"></a>弹性容器(Flex container)</h2><p>包含着弹性项目的父元素。通过设置 <code>display</code> 属性的值为 <code>flex</code> 或 <code>inline-flex</code> 来定义弹性容器。</p>
 <h2 id="弹性项目-Flex-item"><a href="#弹性项目-Flex-item" class="headerlink" title="弹性项目(Flex item)"></a>弹性项目(Flex item)</h2><p>弹性容器的每个子元素都称为<strong>弹性项目</strong>。<strong>弹性容器直接包含的文本将被包覆成匿名弹性单元</strong>。</p>
 <h2 id="轴-Axis"><a href="#轴-Axis" class="headerlink" title="轴(Axis)"></a>轴(Axis)</h2><p>每个弹性框布局包含两个轴。弹性项目沿其依次排列的那根轴称为<strong>主轴(main axis)</strong>。垂直于主轴的那根轴称为<strong>侧轴(cross axis)</strong>。</p>
+<p>以下为flex容器属性:</p>
 <blockquote>
 <ul>
 <li>flex-direction 确立主轴。</li>
@@ -392,12 +393,20 @@
 <li>align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</li>
 </ul>
 </blockquote>
-<h1 id="方向-Direction"><a href="#方向-Direction" class="headerlink" title="方向(Direction)"></a>方向(Direction)</h1><p>弹性容器的主轴起点(main start)/主轴终点(main end)和侧轴起点(cross start)/侧轴终点(cross end)描述了弹性项目排布的起点与终点。它们具体取决于弹性容器的主轴与侧轴中，由 writing-mode 确立的方向（从左到右、从右到左，等等）。</p>
+<h2 id="方向-Direction-row-row-reverse-column-column-reverse"><a href="#方向-Direction-row-row-reverse-column-column-reverse" class="headerlink" title="方向(Direction): row | row-reverse | column | column-reverse"></a>方向(Direction): row | row-reverse | column | column-reverse</h2><p>弹性容器的主轴起点(main start)/主轴终点(main end)和侧轴起点(cross start)/侧轴终点(cross end)描述了弹性项目排布的起点与终点。它们具体取决于弹性容器的主轴与侧轴中，由 writing-mode 确立的方向（从左到右、从右到左，等等）。</p>
 <blockquote>
 <ul>
 <li>order 属性将元素与序号关联起来，以此决定哪些元素先出现。</li>
 <li>flex-flow 属性是 flex-direction 和 flex-wrap 属性的简写，决定弹性项目如何排布。</li>
-<li>例子：<code>flex-flow: row nowarp;</code> // 水平方向 不换行</li>
+<li>例子：<code>flex-flow: row nowarp;</code> // 行 不加新行</li>
+</ul>
+</blockquote>
+<h2 id="行-Line"><a href="#行-Line" class="headerlink" title="行(Line)"></a>行(Line)</h2><p>根据 <code>flex-wrap</code> 属性，弹性项目可以排布在单个行或者多个行中。此属性控制侧轴的方向和新行排列的方向。</p>
+<h2 id="尺寸-Dimension"><a href="#尺寸-Dimension" class="headerlink" title="尺寸(Dimension)"></a>尺寸(Dimension)</h2><p>根据弹性容器的主轴与侧轴，弹性项目的宽和高中，对应主轴的称为主轴尺寸(main size) ，对应侧轴的称为 侧轴尺寸(cross size)。</p>
+<blockquote>
+<ul>
+<li>min-height 与 min-width 属性初始值将为 0。</li>
+<li>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写，描述弹性项目的整体的伸缩性。</li>
 </ul>
 </blockquote>
 
