@@ -283,6 +283,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2017/12/17/react_router4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谭大仙">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谭大仙">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/17/react_router4/" itemprop="url">理解 React Router 4.0</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-17T08:12:45+08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/React/React-Router/" itemprop="url" rel="index">
+                    <span itemprop="name">React-Router</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/17/react_router4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/12/17/react_router4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>React Router 4.0 （以下简称 RR4） 已经正式发布，它遵循React的设计理念，即万物皆组件。所以 RR4 只是一堆 提供了导航功能的组件（还有若干对象和方法），具有声明式（声明式编程简单来讲就是你只需要关心做什么，而无需关心如何去做，好比你写 React 组件，只需要 render 出你想要的组件，至于组件是如何实现的是 React 要处理的事情。），可组合性的特点。</p>
+<ul>
+<li>react-router React Router 核心</li>
+<li>react-router-dom 用于 DOM 绑定的 React Router</li>
+<li>react-router-native 用于 React Native 的 React Router</li>
+<li>react-router-redux React Router 和 Redux 的集成</li>
+<li>react-router-config 静态路由配置的小助手</li>
+</ul>
+</blockquote>
+<h1 id="引入-react-router-dom"><a href="#引入-react-router-dom" class="headerlink" title="引入 react-router-dom"></a>引入 react-router-dom</h1><p><code>import { BrowserRouter, Link, Route, Redirect, Switch } from &#39;react-router-dom&#39;</code></p>
+<h1 id="简单例子"><a href="#简单例子" class="headerlink" title="简单例子"></a>简单例子</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import ReactDom from &apos;react-dom&apos;</span><br><span class="line">import &#123; BrowserRouter, Link, Route, Redirect, Switch &#125; from &apos;react-router-dom&apos;</span><br><span class="line">import App from &apos;./App&apos;</span><br><span class="line"></span><br><span class="line">// First 组件</span><br><span class="line">function First () &#123; </span><br><span class="line">	return (</span><br><span class="line">		&lt;div&gt;first&lt;/div&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line">// second 组件 </span><br><span class="line">function Second () &#123;</span><br><span class="line">	return (</span><br><span class="line">		&lt;div&gt;second&lt;/div&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function ErrorPage (&#123; match &#125;) &#123;</span><br><span class="line">	return (</span><br><span class="line">		&lt;div&gt;404 错误地址:&#123;match.params.location&#125;</span><br><span class="line">			跳转至：</span><br><span class="line">			&lt;Redirect to=&apos;/first&apos;&gt;&lt;/Redirect&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDom.render(</span><br><span class="line">	(</span><br><span class="line">		&lt;BrowserRouter&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&lt;li&gt;</span><br><span class="line">						&lt;Link to=&apos;/&apos;&gt;home&lt;/Link&gt;</span><br><span class="line">					&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;</span><br><span class="line">						&lt;Link to=&apos;/first&apos;&gt;first&lt;/Link&gt;</span><br><span class="line">					&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;</span><br><span class="line">						&lt;Link to=&apos;/Second&apos;&gt;second&lt;/Link&gt;</span><br><span class="line">					&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">				&lt;Switch&gt;</span><br><span class="line">					&lt;Route path=&apos;/&apos; exact component=&#123;App&#125;&gt;&lt;/Route&gt;</span><br><span class="line">					&lt;Route path=&apos;/first&apos; exact component=&#123;First&#125;&gt;&lt;/Route&gt;</span><br><span class="line">					&lt;Route path=&apos;/Second&apos; exact component=&#123;Second&#125;&gt;&lt;/Route&gt;</span><br><span class="line">					&lt;Route path=&apos;/:location&apos; component=&#123;ErrorPage&#125;&gt;&lt;/Route&gt;</span><br><span class="line">				&lt;/Switch&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/BrowserRouter&gt;</span><br><span class="line">	),</span><br><span class="line">	document.getElementById(&apos;root&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a><browserrouter></browserrouter></h2><p>A <router> that uses the HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL</router></p>
+<h3 id="basename-string"><a href="#basename-string" class="headerlink" title="basename: string"></a>basename: string</h3><p>The base URL for all locations. If your app is served from a sub-directory on your server, you’ll want to set this to the sub-directory. A properly formatted basename should have a leading slash, but no trailing slash.</p>
+<h3 id="getUserConfirmation-func"><a href="#getUserConfirmation-func" class="headerlink" title="getUserConfirmation: func"></a>getUserConfirmation: func</h3><p>A function to use to confirm navigation. Defaults to using window.confirm.</p>
+<h3 id="forceRefresh-bool"><a href="#forceRefresh-bool" class="headerlink" title="forceRefresh: bool"></a>forceRefresh: bool</h3><p>If true the router will use full page refreshes on page navigation. You probably only want this in browsers that don’t support the HTML5 history API.</p>
+<h3 id="keyLength-number"><a href="#keyLength-number" class="headerlink" title="keyLength: number"></a>keyLength: number</h3><p>The length of location.key. Defaults to 6.</p>
+<p>###children: node<br>A single child element to render.</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><link></h2><p>Provides declarative, accessible navigation around your application.</p>
+<h3 id="to-string"><a href="#to-string" class="headerlink" title="to: string"></a>to: string</h3><p>The pathname or location to link to.</p>
+<h3 id="to-object"><a href="#to-object" class="headerlink" title="to: object"></a>to: object</h3><p>The location to link to.</p>
+<h3 id="replace-bool"><a href="#replace-bool" class="headerlink" title="replace: bool"></a>replace: bool</h3><p>When true, clicking the link will replace the current entry in the history stack instead of adding a new one.</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><route></route></h2><p>The Route component is perhaps the most important component in React Router to understand and learn to use well. Its most basic responsibility is to render some UI when a location matches the route’s path.<br>Consider the following code:</p>
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a><redirect></redirect></h2><p>Rendering a <redirect> will navigate to a new location. The new location will override the current location in the history stack, like server-side redirects (HTTP 3xx) do.</redirect></p>
+<h3 id="to-string-1"><a href="#to-string-1" class="headerlink" title="to: string"></a>to: string</h3><p>The URL to redirect to.</p>
+<h3 id="to-object-1"><a href="#to-object-1" class="headerlink" title="to: object"></a>to: object</h3><p>A location to redirect to.</p>
+<h3 id="push-bool"><a href="#push-bool" class="headerlink" title="push: bool"></a>push: bool</h3><p>When true, redirecting will push a new entry onto the history instead of replacing the current one.</p>
+<h3 id="from-string"><a href="#from-string" class="headerlink" title="from: string"></a>from: string</h3><p>A pathname to redirect from. This can only be used to match a location when rendering a <redirect> inside of a <switch>. See <switch children=""> for more details.</switch></switch></redirect></p>
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a><switch></switch></h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2017/12/16/react_life_cycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1746,137 +1948,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2016/06/02/html5darg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="谭大仙">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谭大仙">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/06/02/html5darg/" itemprop="url">HTML5 简单的拖动效果</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T10:56:10+08:00">
-                2016-06-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/06/02/html5darg/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2016/06/02/html5darg/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://www.qdfuns.com/notes/20144/4d58b02e8777d53338fc0fdf71951274.html" target="_blank" rel="noopener">HTML5 简单的拖动效果</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1927,7 +1998,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1938,7 +2009,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1949,7 +2020,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
