@@ -365,9 +365,16 @@
       
         
           
-            <p><a href="http://www.qdfuns.com/notes/20144/85fed559c8d68d751e457077778ed023.html" target="_blank" rel="noopener">HTML5 本地拖放图片</a></p>
+          HTML5 本地拖放图片
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/02/html5darg2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -496,9 +503,16 @@
       
         
           
-            <p><a href="http://www.qdfuns.com/notes/20144/4d58b02e8777d53338fc0fdf71951274.html" target="_blank" rel="noopener">HTML5 简单的拖动效果</a></p>
+          HTML5 简单的拖动效果
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/02/html5darg/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -627,118 +641,30 @@
       
         
           
-            <p>浏览器兼容问题一直是前段开发工程师比较头痛的问题，熟悉了里面的规则也就变得简单了，这里有一份资料可以分享给大家，大家平时开发过程中遵循这个规律的话，会变得轻松多了：</p>
-<h1 id="各浏览器CSS-hack兼容表："><a href="#各浏览器CSS-hack兼容表：" class="headerlink" title="各浏览器CSS hack兼容表："></a>各浏览器CSS hack兼容表：</h1><table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center">IE6</th>
-<th style="text-align:center">IE7</th>
-<th style="text-align:center">IE8</th>
-<th style="text-align:center">Firefox</th>
-<th style="text-align:center">Chrome</th>
-<th style="text-align:center">Safari</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">!important</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">_</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">*</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">*+</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">\9</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">\0</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">nth-of-type(1)</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-</tbody>
-</table>
-<h2 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#test&#123;</span><br><span class="line">	color: red; </span><br><span class="line">	color: red !important;</span><br><span class="line">	_color: red; </span><br><span class="line">	*color: red; </span><br><span class="line">	*+color: red; </span><br><span class="line">	color: red\9; </span><br><span class="line">	color: red\0; </span><br><span class="line">&#125;</span><br><span class="line">body:nth-of-type(1) p&#123;</span><br><span class="line">	color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>整体测试代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;</span><br><span class="line">	color: #000000;</span><br><span class="line">	color: #0000FF\0;</span><br><span class="line">	[color: #00FF00;</span><br><span class="line">	*color: #FFFF00;</span><br><span class="line">	_color: #FF0000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其他说明：</p>
-<ul>
-<li><ol>
-<li>如果你的页面对IE7兼容没有问题，又不想大量修改现有代码，同时又能在IE8中正常使用，微软声称，开发商仅需要在目前兼容IE7的网站上添加一行代码即可解决问题，此代码如下：<br><code>&lt;meta http-equiv=”x-ua-compatible” content=”ie=7″ /&gt;</code></li>
-</ol>
-</li>
-<li><ol>
-<li><code>body:nth-of-type(1)</code> 如果这样写，表示全局查找body，将会对应第一个<code>&lt;body&gt;</code>。</li>
-</ol>
-</li>
-<li><ol>
-<li>还有其他写法，比如：<br><code>*html #test{}</code>或者 <code>*+html #test{}</code></li>
-</ol>
-</li>
-<li><ol>
-<li>*+html 对IE7的hack 必须保证HTML顶部有如下声明：<br><code>http://www.w3.org/TR/html4/loose.dtd</code></li>
-</ol>
-</li>
-<li><ol>
-<li>顺序：Firefox、IE8、IE7、IE6依次排列。</li>
-</ol>
-</li>
-</ul>
-<h2 id="小知识：什么是CSS-hack？"><a href="#小知识：什么是CSS-hack？" class="headerlink" title="小知识：什么是CSS hack？"></a>小知识：什么是CSS hack？</h2><blockquote>
-<p>*　由于不同的浏览器，比如IE6、IE7、IE8、Firefox等，对CSS的解析认识不一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。</p>
-<p>*　这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中也能得到我们想要的页面效果。</p>
-<p>*　这个针对不同的浏览器写不同的CSS code的过程，就叫CSS hack，也叫写CSS hack。</p>
-</blockquote>
-<p><a href="http://www.cnblogs.com/fighting_cp/archive/2010/08/31/1812539.html" target="_blank" rel="noopener">参考</a></p>
+          浏览器兼容问题一直是前段开发工程师比较头痛的问题，熟悉了里面的规则也就变得简单了，这里有一份资料可以分享给大家，大家平时开发过程中遵循这个规律的话，会变得轻松多了：
+各浏览器CSS hack兼容表：
 
-          
+
+
+IE6
+IE7
+IE8
+Firefox
+Chrome
+Safari
+
+
+
+
+!importan
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/06/02/csshack2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -867,10 +793,17 @@
       
         
           
-            <p>Html5 开始支持video和audio标签，但是各个浏览器支持的格式不一样，见下图</p>
-<p><img src="http://cdn.attach.qdfuns.com/notes/pics/201605/13/104738j826rk82zrkik4i3.png" alt="img"></p>
+          Html5 开始支持video和audio标签，但是各个浏览器支持的格式不一样，见下图
+
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/13/html5videoaudio/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -999,17 +932,20 @@
       
         
           
-            <h1 id="下载ffmpeg。"><a href="#下载ffmpeg。" class="headerlink" title="下载ffmpeg。"></a>下载ffmpeg。</h1><p>地址：<a href="https://ffmpeg.zeranoe.com/builds/" target="_blank" rel="noopener">https://ffmpeg.zeranoe.com/builds/</a><br>选择32位和64位的静态包。<br><img src="http://cdn.attach.qdfuns.com/notes/pics/201605/12/224100m1ke9o69u81y6dsg.png" alt="img"></p>
-<h1 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h1><p>右击“我的电脑”</p>
-<p>点击”高级系统设置” <img src="http://cdn.attach.qdfuns.com/notes/pics/201605/12/224232sz6jjnfcz2ih2be1.png" alt="高级系统设置"></p>
-<p>点击“环境变量” <img src="http://cdn.attach.qdfuns.com/notes/pics/201605/12/224355r9zlxnijshjdzh63.png" alt="img2"></p>
-<p>在“用户变量”中新建 <img src="http://cdn.attach.qdfuns.com/notes/pics/201605/12/224456dr3j6j6rogjmjfo6.png" alt="img3"></p>
-<p>在“系统变量”中修改Path，添加 ”;D:\Program Files (x86)\ffmpeg\bin“</p>
-<h1 id="在cmd运行ffmpeg"><a href="#在cmd运行ffmpeg" class="headerlink" title="在cmd运行ffmpeg"></a>在cmd运行ffmpeg</h1><p><img src="http://cdn.attach.qdfuns.com/notes/pics/201605/12/225214kozpbxe7doixoio3.png" alt="img4"></p>
-<p>success！</p>
-<p>转换格式：ffmpeg -i D:/work/a.mp4 -acodec libvorbis D:/work/a.flv</p>
-
-          
+          下载ffmpeg。地址：https://ffmpeg.zeranoe.com/builds/选择32位和64位的静态包。
+修改环境变量右击“我的电脑”
+点击”高级系统设置” 
+点击“环境变量” 
+在“用户变量”中新建 
+在“系统变量”中修改Path，添加 ”;D:\Program Files (x8
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/12/ffmpeg/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1160,8 +1096,15 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">// 使用原生js 封装ajax</span><br><span class="line">// 兼容xhr对象</span><br><span class="line">function createXHR()&#123;</span><br><span class="line">  if(typeof XMLHttpRequest != &quot;undefined&quot;)&#123; // 非IE6浏览器</span><br><span class="line">    return new XMLHttpRequest();</span><br><span class="line">  &#125;else if(typeof ActiveXObject != &quot;undefined&quot;)&#123;   // IE6浏览器</span><br><span class="line">    var version = [</span><br><span class="line">          &quot;MSXML2.XMLHttp.6.0&quot;,</span><br><span class="line">          &quot;MSXML2.XMLHttp.3.0&quot;,</span><br><span class="line">          &quot;MSXML2.XMLHttp&quot;,</span><br><span class="line">    ];</span><br><span class="line">    for(var i = 0; i &lt; version.length; i++)&#123;</span><br><span class="line">      try&#123;</span><br><span class="line">        return new ActiveXObject(version[i]);</span><br><span class="line">      &#125;catch(e)&#123;</span><br><span class="line">        //跳过</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    throw new Error(&quot;您的系统或浏览器不支持XHR对象！&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 转义字符</span><br><span class="line">function params(data)&#123;</span><br><span class="line">  var arr = [];</span><br><span class="line">  for(var i in data)&#123;</span><br><span class="line">    arr.push(encodeURIComponent(i) + &quot;=&quot; + encodeURIComponent(data[i]));</span><br><span class="line">  &#125;</span><br><span class="line">  return arr.join(&quot;&amp;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">// 封装ajax</span><br><span class="line">function ga_ajax(obj)&#123;</span><br><span class="line">  var xhr = createXHR();</span><br><span class="line">  obj.url = obj.url + &quot;?rand=&quot; + Math.random(); // 清除缓存</span><br><span class="line">  obj.data = params(obj.data);      // 转义字符串</span><br><span class="line">  if(obj.method === &quot;get&quot;)&#123;      // 判断使用的是否是get方式发送</span><br><span class="line">    obj.url += obj.url.indexOf(&quot;?&quot;) == &quot;-1&quot; ? &quot;?&quot; + obj.data : &quot;&amp;&quot; + obj.data;</span><br><span class="line">  &#125;</span><br><span class="line">  // 异步</span><br><span class="line">  if(obj.async === true)&#123;</span><br><span class="line">    // 异步的时候需要触发onreadystatechange事件</span><br><span class="line">    xhr.onreadystatechange = function()&#123;</span><br><span class="line">      // 执行完成</span><br><span class="line">      if(xhr.readyState == 4)&#123;</span><br><span class="line">        callBack();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  xhr.open(obj.method,obj.url,obj.async);  // false是同步 true是异步 // &quot;demo.php?rand=&quot;+Math.random()+&quot;&amp;name=ga&amp;ga&quot;,</span><br><span class="line">  if(obj.method === &quot;post&quot;)&#123;</span><br><span class="line">    xhr.setRequestHeader(&quot;Content-Type&quot;,&quot;application/x-www-form-urlencoded&quot;);</span><br><span class="line">    xhr.send(obj.data);</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    xhr.send(null);</span><br><span class="line">  &#125;</span><br><span class="line">  // xhr.abort(); // 取消异步请求</span><br><span class="line">  // 同步</span><br><span class="line">  if(obj.async === false)&#123;</span><br><span class="line">    callBack();</span><br><span class="line">  &#125;</span><br><span class="line">  // 返回数据</span><br><span class="line">  function callBack()&#123;</span><br><span class="line">    // 判断是否返回正确</span><br><span class="line">    if(xhr.status == 200)&#123;</span><br><span class="line">      obj.success(xhr.responseText);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      obj.Error(&quot;获取数据失败，错误代号为：&quot;+xhr.status+&quot;错误信息为：&quot;+xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var html = document.getElementsByTagName(&quot;html&quot;)[0];</span><br><span class="line">html.onclick = function()&#123;</span><br><span class="line">  ga_ajax(&#123;</span><br><span class="line">    &quot;method&quot; : &quot;post&quot;,</span><br><span class="line">    &quot;url&quot; : &quot;dem0o.php&quot;,</span><br><span class="line">    &quot;data&quot; : &#123;</span><br><span class="line">      &quot;name&quot; : &quot;gaga&quot;,</span><br><span class="line">      &quot;age&quot; : 10000000,</span><br><span class="line">      &quot;num&quot; : &quot;12346&amp;598&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;success&quot; : function(data)&#123;</span><br><span class="line">      alert(data);</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;Error&quot; : function(text)&#123;</span><br><span class="line">      alert(text);</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;async&quot; : false</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/28/usejswriteajax/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1312,18 +1255,16 @@
       
         
           
-            <h1 id="创建XMLHttpRequest对象"><a href="#创建XMLHttpRequest对象" class="headerlink" title="创建XMLHttpRequest对象"></a>创建XMLHttpRequest对象</h1><p>与之前众多DOM操作一样,创建XHR对象也具有兼容性问题:IE6及之前的版本使用ActiveXObject,IE7之后及其它浏览器使用XMLHttpRequest</p>
-<p>不但IE6及其之前的版本将XHR作为一个ActiveXObject运行,而且还存在众多版本:一开始是Microsoft.XMLHTTP 之后变成Msxml2.XMLHTTP及更新版的Msxml3.XMLHTTP</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function XHR() &#123;</span><br><span class="line">    var xhr;</span><br><span class="line">    try &#123;xhr = new XMLHttpRequest();&#125;</span><br><span class="line">    catch(e) &#123;</span><br><span class="line">        var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">        for (var i=0,len=IEXHRVers.length;i&lt; len;i++) &#123;</span><br><span class="line">            try &#123;xhr = new ActiveXObject(IEXHRVers[i]);&#125;</span><br><span class="line">            catch(e) &#123;continue;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return xhr;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"># 使用XHR</span><br></pre></td></tr></table></figure>
-<p>var xhr = XHR();<br>//open方法 创建一个新的http请求，并指定此请求的方法、URL以及验证信息(用户名/密码)<br>xhr.open(“get”,”test.txt”,true);<br>/<em>第一个参数是请求方式,一般用get与post方法,与form标签的method类似<br>第二个参数是请求的URL<br>第三个参数是请求是同步进行还是异步进行,true表示异步<br>调用了open方法仅仅是传递了参数而已</em>/<br>xhr.send(null);//调用了send方法后才会发出请求<br>//并且get方式发送请求时send参数是null<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在服务器环境中执行上面的脚本,并且给一个php或asp脚本发送请求,会发现服务器端脚本其实会被执行</span><br></pre></td></tr></table></figure></p>
-<p>//PHP脚本<br>$fp =fopen(“a.txt”,”wb”);<br>fwrite($fp,”PHP文件在后台执行了”);<br>fclose($fp);<br>echo “返回内容!”;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面PHP脚本的返回内容不会直接在页面上显示出来,必需要用JS通过XHR对象接收</span><br></pre></td></tr></table></figure></p>
-<p>var xhr = XHR();<br>xhr.open(“get”,”test.php”,true);<br>xhr.onreadystatechange = callback;//在readystatechange事件上绑定一个函数<br>//当接收到数据时,会调用readystatechange事件上的事件处理函数<br>xhr.send(null);<br>functon callback() {<br>    //在这里面没有使用this.readyState这是因为IE下面ActiveXObject的特殊性<br>    if (xhr.readyState == 4) {//readyState表示文档加载进度,4表示完毕<br>        alert(xhr.reponseText);//responseText属性用来取得返回的文本<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># XHR对象参考</span><br><span class="line">readyState属性 返回当前请求的状态</span><br><span class="line">&gt; * 0 (未初始化) 对象已建立，但是尚未初始化（尚未调用open方法）</span><br><span class="line">&gt; * 1 (初始化) 对象已建立，尚未调用send方法</span><br><span class="line">&gt; * 2 (发送数据) send方法已调用，但是当前的状态及http头未知</span><br><span class="line">&gt; * 3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误</span><br><span class="line">&gt; * 4 (完成) 数据接收完毕,此时可以通过通过responseBody和responseText获取完整的回应数据</span><br></pre></td></tr></table></figure></p>
-<p>var xhr =XHR();<br>alert(xhr.readyState);//0<br>xhr.open(“get”,”test.htm”,true);<br>alert(xhr.readyState);//1<br>xhr.send(null);<br>alert(xhr.readyState);//IE下会是4,而FF下会是2<br>//可以通过readystatechange事件监听<br>xhr = XHR();<br>xhr.onreadystatechange = function () {<br>    alert(xhr.readyState);//FF下会依次是1,2,3,4但最后还会再来个1<br>    //IE下则是1,1,3,4<br>};<br>xhr.open(“get”,”test.txt”,true);<br>xhr.send(null);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">从上面可以看到,对于readyState这个属性,各个浏览器看法也不一样,但其实我们只需要知道当状态为4的时候可以获取response就行了!</span><br><span class="line"></span><br><span class="line">status 返回当前请求的http状态码</span><br><span class="line"></span><br><span class="line">status属性返回当前请求的http状态码,此属性仅当数据发送并接收完毕后才可获取。完整的HTTP状态码如下:</span><br><span class="line"></span><br><span class="line">&gt; * 100 Continue 初始的请求已经接受，客户应当继续发送请求的其余部分</span><br><span class="line">&gt; * 101 Switching Protocols 服务器将遵从客户的请求转换到另外一种协议</span><br><span class="line">&gt; * 200 OK 一切正常，对GET和POST请求的应答文档跟在后面。</span><br><span class="line">&gt; * 201 Created 服务器已经创建了文档，Location头给出了它的URL。</span><br><span class="line">&gt; * 202 Accepted 已经接受请求，但处理尚未完成。</span><br><span class="line">&gt; * 203 Non-Authoritative Information 文档已经正常地返回，但一些应答头可能不正确，因为使用的是文档的拷贝</span><br><span class="line">&gt; * 204 No Content 没有新文档，浏览器应该继续显示原来的文档。如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的</span><br><span class="line">&gt; * 205 Reset Content 没有新的内容，但浏览器应该重置它所显示的内容。用来强制浏览器清除表单输入内容</span><br><span class="line">&gt; * 206 Partial Content 客户发送了一个带有Range头的GET请求，服务器完成了它</span><br><span class="line">&gt; * 300 Multiple Choices 客户请求的文档可以在多个位置找到，这些位置已经在返回的文档内列出。如果服务器要提出优先选择，则应该在Location应答头指明。</span><br><span class="line">&gt; * 301 Moved Permanently 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。</span><br><span class="line">&gt; * 302 Found 类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。</span><br><span class="line">&gt; * 303 See Other 类似于301/302，不同之处在于，如果原来的请求是POST，Location头指定的重定向目标文档应该通过GET提取</span><br><span class="line">&gt; * 304 Not Modified 客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。服务器告诉客户，原来缓冲的文档还可以继续使用。</span><br><span class="line">&gt; * 305 Use Proxy 客户请求的文档应该通过Location头所指明的代理服务器提取</span><br><span class="line">&gt; * 307 Temporary Redirect 和302（Found）相同。许多浏览器会错误地响应302应答进行重定向，即使原来的请求是POST，即使它实际上只能在POST请求的应答是303时才能重定向。由于这个原因，HTTP 1.1新增了307，以便更加清除地区分几个状态代码：当出现303应答时，浏览器可以跟随重定向的GET和POST请求；如果是307应答，则浏览器只能跟随对GET请求的重定向。</span><br><span class="line">&gt; * 400 Bad Request 请求出现语法错误。</span><br><span class="line">&gt; * 401 Unauthorized 客户试图未经授权访问受密码保护的页面。应答中会包含一个WWW-Authenticate头，浏览器据此显示用户名字/密码对话框，然后在填写合适的Authorization头后再次发出请求。</span><br><span class="line">&gt; * 403 Forbidden 资源不可用。</span><br><span class="line">&gt; * 404 Not Found 无法找到指定位置的资源</span><br><span class="line">&gt; * 405 Method Not Allowed 请求方法（GET、POST、HEAD、Delete、PUT、TRACE等）对指定的资源不适用。</span><br><span class="line">&gt; * 406 Not Acceptable 指定的资源已经找到，但它的MIME类型和客户在Accpet头中所指定的不兼容</span><br><span class="line">&gt; * 407 Proxy Authentication Required 类似于401，表示客户必须先经过代理服务器的授权。</span><br><span class="line">&gt; * 408 Request Timeout 在服务器许可的等待时间内，客户一直没有发出任何请求。客户可以在以后重复同一请求。</span><br><span class="line">&gt; * 409 Conflict 通常和PUT请求有关。由于请求和资源的当前状态相冲突，因此请求不能成功。</span><br><span class="line">&gt; * 410 Gone 所请求的文档已经不再可用，而且服务器不知道应该重定向到哪一个地址。它和404的不同在于，返回407表示文档永久地离开了指定的位置，而404表示由于未知的原因文档不可用。</span><br><span class="line">&gt; * 411 Length Required 服务器不能处理请求，除非客户发送一个Content-Length头</span><br><span class="line">&gt; * 412 Precondition Failed 请求头中指定的一些前提条件失败</span><br><span class="line">&gt; * 413 Request Entity Too Large 目标文档的大小超过服务器当前愿意处理的大小。如果服务器认为自己能够稍后再处理该请求，则应该提供一个Retry-After头</span><br><span class="line">&gt; * 414 Request URI Too Long URI太长</span><br><span class="line">&gt; * 416 Requested Range Not Satisfiable 服务器不能满足客户在请求中指定的Range头</span><br><span class="line">&gt; * 500 Internal Server Error 服务器遇到了意料不到的情况，不能完成客户的请求</span><br><span class="line">&gt; * 501 Not Implemented 服务器不支持实现请求所需要的功能。例如，客户发出了一个服务器不支持的PUT请求</span><br><span class="line">&gt; * 502 Bad Gateway 服务器作为网关或者代理时，为了完成请求访问下一个服务器，但该服务器返回了非法的应答</span><br><span class="line">&gt; * 503 Service Unavailable 服务器由于维护或者负载过重未能应答。例如，Servlet可能在数据库连接池已满的情况下返回503。服务器返回503时可以提供一个Retry-After头</span><br><span class="line">&gt; * 504 Gateway Timeout 由作为代理或网关的服务器使用，表示不能及时地从远程服务器获得应答</span><br><span class="line">&gt; * 505 HTTP Version Not Supported 服务器不支持请求中所指明的HTTP版本</span><br><span class="line"></span><br><span class="line">事实上,我们只需要知道状态为200的时候(OK)才读取response就行了!</span><br><span class="line"></span><br><span class="line">## responseText与responseXML</span><br><span class="line"></span><br><span class="line">responseText 将响应信息作为字符串返回 . XMLHTTP尝试将响应信息解码为Unicode字符串，XMLHTTP默认将响应数据的编码定为UTF-8，如果服务器返回的数据带BOM(byte-order mark)，XMLHTTP可以解码任何UCS-2 (big or little endian)或者UCS-4 数据。注意，如果服务器返回的是xml文档，此属性并不处理xml文档中的编码声明。你需要使用responseXML来处理。</span><br><span class="line"></span><br><span class="line">responseXML 将响应信息格式化为Xml Document对象并返回 . 如果响应数据不是有效的XML文档，此属性本身不返回XMLDOMParseError，可以通过处理过的DOMDocument对象获取错误信息。</span><br><span class="line"></span><br><span class="line">## 其它一些XHR对象的方法</span><br><span class="line"></span><br><span class="line">abort 取消当前请求</span><br><span class="line"></span><br><span class="line">getAllResponseHeaders 获取响应的所有http头 每个http头名称和值用冒号分割，并以\r\n结束。当send方法完成后才可调用该方法。</span><br><span class="line"></span><br><span class="line">getResponseHeader 从响应信息中获取指定的http头 当send方法成功后才可调用该方法。如果服务器返回的文档类型为&quot;text/xml&quot;, 则这句话xmlhttp.getResponseHeader(&quot;Content-Type&quot;);将返回字符串&quot;text/xml&quot;。可以使用getAllResponseHeaders方法获取完整的http头信息。</span><br><span class="line"></span><br><span class="line">setRequestHeader 单独指定请求的某个http头 如果已经存在已此名称命名的http头，则覆盖之。此方法必须在open方法后调用。</span><br><span class="line"></span><br><span class="line"># 请求方式</span><br><span class="line">## GET 请求</span><br></pre></td></tr></table></figure></p>
-<p>//JS<br>var xhr = XHR();<br>xhr.open(“get”,”test.php?qs=true&amp;userName=abc&amp;pwd=123456”,true);<br>xhr.onreadystatechange = function () {<br>    if (xhr.readyState==4 &amp;&amp; xhr.status ==200) {<br>        alert(xhr.responseText);<br>    }<br>};<br>xhr.send(null);<br>//PHP<br>print_r($_GET);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## POST 请求</span><br></pre></td></tr></table></figure></p>
-<p>//JS<br>var xhr = XHR();<br>xhr.open(“post”,”test.php”,true);<br>xhr.onreadystatechange = function () {<br>    if (xhr.readyState==4 &amp;&amp; xhr.status ==200) {<br>        alert(xhr.responseText);<br>    }<br>};<br>//比GET请求多了一步<br>xhr.setRequestHeader(“Content-Type”,”application/x-www-form-urlencoded”);<br>//另外,数据是通过send方法发送的<br>xhr.send(“qs=true&amp;userName=abc&amp;pwd=123456”);<br>//PHP<br>header(“Cache-Control: no-cache, must-revalidate”);//可以让浏览器不缓存结果<br>print_r($_POST);<br>```</p>
-<p><strong>转自–gaojun</strong></p>
-
-          
+          创建XMLHttpRequest对象与之前众多DOM操作一样,创建XHR对象也具有兼容性问题:IE6及之前的版本使用ActiveXObject,IE7之后及其它浏览器使用XMLHttpRequest
+不但IE6及其之前的版本将XHR作为一个ActiveXObject运行,而且还存在众多版本:一开始是
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/28/xhr/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1474,24 +1415,21 @@
       
         
           
-            <blockquote>
-<ol>
-<li><p>加上一个下划线“_”，IE 6 照样可以识别该属性，而且只有IE 6可以识别。</p>
-</li>
-<li><p>特定的css属性值后缀“\9”，从而做到只有IE8及以下浏览器能够识别该属性。</p>
-</li>
-<li><p>IE 7也支持在选择器前添加<em>+html和</em>:first-child+html ，让当前选择器成为*+html的后辈选择器，只有IE<br>可以识别此类样式选择器</p>
-</li>
-<li><p>只有IE8支持嵌套如下@media类型查询语句：@media \0screen</p>
-</li>
-<li><p>background-color:red\0;IE8和IE9都支持；</p>
-</li>
-<li><p>background-color:blue\9\0; 仅IE9支持；</p>
-</li>
-</ol>
-</blockquote>
-
           
+
+加上一个下划线“_”，IE 6 照样可以识别该属性，而且只有IE 6可以识别。
+
+特定的css属性值后缀“\9”，从而做到只有IE8及以下浏览器能够识别该属性。
+
+IE 7也支持在选择器前添加+html和:first-child+html ，让当前选择器成为*+html的后辈选择器，只有IE可以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/12/17/csshack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
