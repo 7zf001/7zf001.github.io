@@ -121,7 +121,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    sidebar: {"position":"left","display":"remove","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -522,6 +522,160 @@
 
 
         </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/default_avatar.jpg"
+               alt="Jeff Tam" />
+          <p class="site-author-name" itemprop="name">Jeff Tam</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="http://7zf001.github.io" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/7zf001" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/ChivanTam/" target="_blank" title="博客园">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      博客园
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子属性"><span class="nav-number">1.</span> <span class="nav-text">弹性盒子属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性容器-Flex-container"><span class="nav-number">1.1.</span> <span class="nav-text">弹性容器(Flex container)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性项目-Flex-item"><span class="nav-number">1.2.</span> <span class="nav-text">弹性项目(Flex item)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轴-Axis"><span class="nav-number">1.3.</span> <span class="nav-text">轴(Axis)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction-确立主轴-初始值-row。"><span class="nav-number">1.3.1.</span> <span class="nav-text">flex-direction 确立主轴, 初始值:row。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content-定义了在当前行上，弹性项目沿主轴-main-axis-如何排布。"><span class="nav-number">1.3.2.</span> <span class="nav-text">justify-content 定义了在当前行上，弹性项目沿主轴(main axis)如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-items-定义了在当前行上，弹性项目沿侧轴默认如何排布。"><span class="nav-number">1.3.3.</span> <span class="nav-text">align-items 定义了在当前行上，弹性项目沿侧轴默认如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-self-定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由-align-items-所确立的默认值。"><span class="nav-number">1.3.4.</span> <span class="nav-text">align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-与-align-content-区别"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">align-items 与 align-content 区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向-Direction"><span class="nav-number">1.4.</span> <span class="nav-text">方向(Direction):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行-Line"><span class="nav-number">1.5.</span> <span class="nav-text">行(Line)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尺寸-Dimension"><span class="nav-number">1.6.</span> <span class="nav-text">尺寸(Dimension)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow"><span class="nav-number">1.6.1.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink"><span class="nav-number">1.6.2.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis"><span class="nav-number">1.6.3.</span> <span class="nav-text">flex-basis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子相关属性"><span class="nav-number">2.</span> <span class="nav-text">弹性盒子相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不影响弹性盒子的属性"><span class="nav-number">2.1.</span> <span class="nav-text">不影响弹性盒子的属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
     </main>
