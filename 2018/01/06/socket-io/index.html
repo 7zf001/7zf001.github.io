@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：1234// server.j">
+<meta name="description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：123456// server">
 <meta name="keywords" content="socket">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Socket.io 初步探索">
 <meta property="og:url" content="https://7zf001.github.io/2018/01/06/socket-io/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：1234// server.jsconst Io = require(&amp;apos;socket.io&amp;apos">
+<meta property="og:description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：123456// server.jsconst app = express()const server = r">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/mine/master/images/socketmodel.png">
-<meta property="og:updated_time" content="2018-01-06T12:35:03.459Z">
+<meta property="og:updated_time" content="2018-01-07T03:15:34.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Socket.io 初步探索">
-<meta name="twitter:description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：1234// server.jsconst Io = require(&amp;apos;socket.io&amp;apos">
+<meta name="twitter:description" content="Socket.io 是什么?socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如on、emit、once等等。 Socket通信模型 配合express后端：123456// server.jsconst app = express()const server = r">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/7zf001/mine/master/images/socketmodel.png">
 
 
@@ -116,7 +116,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":true,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -387,7 +387,7 @@
       
         <h1 id="Socket-io-是什么"><a href="#Socket-io-是什么" class="headerlink" title="Socket.io 是什么?"></a>Socket.io 是什么?</h1><p>socket.io是基于时间的实时双向通信库，它是基于websocket协议的，不同于ajax的http协议的。<br>前后端通过事件进行双向通信，socket.oi对暴露的接口非常简单，例如<code>on</code>、<code>emit</code>、<code>once</code>等等。</p>
 <h1 id="Socket通信模型"><a href="#Socket通信模型" class="headerlink" title="Socket通信模型"></a>Socket通信模型</h1><p><img src="https://raw.githubusercontent.com/7zf001/mine/master/images/socketmodel.png" alt="Socket通信模型"></p>
-<h1 id="配合express"><a href="#配合express" class="headerlink" title="配合express"></a>配合express</h1><p>后端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// server.js</span><br><span class="line">const Io = require(&apos;socket.io&apos;)(http)</span><br><span class="line">Io.on // 监听事件</span><br><span class="line">Io.emit // 触发事件</span><br></pre></td></tr></table></figure></p>
+<h1 id="配合express"><a href="#配合express" class="headerlink" title="配合express"></a>配合express</h1><p>后端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// server.js</span><br><span class="line">const app = express()</span><br><span class="line">const server = require(&apos;http&apos;).createServer(app)</span><br><span class="line">const io = require(&apos;socket.io&apos;)(server)</span><br><span class="line">io.on // 监听事件</span><br><span class="line">io.emit // 触发事件</span><br></pre></td></tr></table></figure></p>
 <p>前端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import io from &apos;socket.io-client&apos;</span><br><span class="line">io.on // 监听事件</span><br><span class="line">io.emit // 触发事件</span><br></pre></td></tr></table></figure></p>
 <h1 id="Socket-io-与-ajax-各自的协议特点"><a href="#Socket-io-与-ajax-各自的协议特点" class="headerlink" title="Socket.io 与 ajax 各自的协议特点"></a>Socket.io 与 ajax 各自的协议特点</h1><h2 id="WebSocket-协议"><a href="#WebSocket-协议" class="headerlink" title="WebSocket 协议"></a>WebSocket 协议</h2><p>Socket是基于websocket协议的一个库，前后端进行双向通信的协议，后端可以主动推送数据。</p>
 <h2 id="http-协议"><a href="#http-协议" class="headerlink" title="http 协议"></a>http 协议</h2><p>ajax是所谓的异步刷新，异步获取数据然后局部刷新，ajax是基于http协议的，它是单向的，实时获取数据只能轮询或者long poling。</p>
