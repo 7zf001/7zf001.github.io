@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Jeff Tam">
 <meta property="og:description" content="创建XMLHttpRequest对象与之前众多DOM操作一样,创建XHR对象也具有兼容性问题:IE6及之前的版本使用ActiveXObject,IE7之后及其它浏览器使用XMLHttpRequest 不但IE6及其之前的版本将XHR作为一个ActiveXObject运行,而且还存在众多版本:一开始是Microsoft.XMLHTTP 之后变成Msxml2.XMLHTTP及更新版的Msxml3.XM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-11T03:40:26.979Z">
+<meta property="og:updated_time" content="2018-01-17T03:37:05.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XHR——XMLHttpRequest对象">
 <meta name="twitter:description" content="创建XMLHttpRequest对象与之前众多DOM操作一样,创建XHR对象也具有兼容性问题:IE6及之前的版本使用ActiveXObject,IE7之后及其它浏览器使用XMLHttpRequest 不但IE6及其之前的版本将XHR作为一个ActiveXObject运行,而且还存在众多版本:一开始是Microsoft.XMLHTTP 之后变成Msxml2.XMLHTTP及更新版的Msxml3.XM">
@@ -396,6 +396,7 @@
       
         <h1 id="创建XMLHttpRequest对象"><a href="#创建XMLHttpRequest对象" class="headerlink" title="创建XMLHttpRequest对象"></a>创建XMLHttpRequest对象</h1><p>与之前众多DOM操作一样,创建XHR对象也具有兼容性问题:IE6及之前的版本使用ActiveXObject,IE7之后及其它浏览器使用XMLHttpRequest</p>
 <p>不但IE6及其之前的版本将XHR作为一个ActiveXObject运行,而且还存在众多版本:一开始是Microsoft.XMLHTTP 之后变成Msxml2.XMLHTTP及更新版的Msxml3.XMLHTTP</p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function XHR() &#123;</span><br><span class="line">    var xhr;</span><br><span class="line">    try &#123;xhr = new XMLHttpRequest();&#125;</span><br><span class="line">    catch(e) &#123;</span><br><span class="line">        var IEXHRVers =[&quot;Msxml3.XMLHTTP&quot;,&quot;Msxml2.XMLHTTP&quot;,&quot;Microsoft.XMLHTTP&quot;];</span><br><span class="line">        for (var i=0,len=IEXHRVers.length;i&lt; len;i++) &#123;</span><br><span class="line">            try &#123;xhr = new ActiveXObject(IEXHRVers[i]);&#125;</span><br><span class="line">            catch(e) &#123;continue;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return xhr;</span><br><span class="line">&#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"># 使用XHR</span><br></pre></td></tr></table></figure>
 <p>var xhr = XHR();<br>//open方法 创建一个新的http请求，并指定此请求的方法、URL以及验证信息(用户名/密码)<br>xhr.open(“get”,”test.txt”,true);<br>/<em>第一个参数是请求方式,一般用get与post方法,与form标签的method类似<br>第二个参数是请求的URL<br>第三个参数是请求是同步进行还是异步进行,true表示异步<br>调用了open方法仅仅是传递了参数而已</em>/<br>xhr.send(null);//调用了send方法后才会发出请求<br>//并且get方式发送请求时send参数是null<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在服务器环境中执行上面的脚本,并且给一个php或asp脚本发送请求,会发现服务器端脚本其实会被执行</span><br></pre></td></tr></table></figure></p>
 <p>//PHP脚本<br>$fp =fopen(“a.txt”,”wb”);<br>fwrite($fp,”PHP文件在后台执行了”);<br>fclose($fp);<br>echo “返回内容!”;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面PHP脚本的返回内容不会直接在页面上显示出来,必需要用JS通过XHR对象接收</span><br></pre></td></tr></table></figure></p>
@@ -532,7 +533,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="JSX JSX(js xml)是React中的语法糖  例子12345678910class A extends React.Componet &amp;#123;    render() &amp;#123;        return (            &amp;lt;div className=&amp;">
+<meta name="description" content="JSX JSX(js xml)是React中的语法糖">
 <meta name="keywords" content="JavaScript,React,JSX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSX - React 笔记">
 <meta property="og:url" content="https://7zf001.github.io/2017/12/07/reactNote/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="JSX JSX(js xml)是React中的语法糖  例子12345678910class A extends React.Componet &amp;#123;    render() &amp;#123;        return (            &amp;lt;div className=&amp;quot;app&amp;quot;&amp;gt;                This is JSX">
+<meta property="og:description" content="JSX JSX(js xml)是React中的语法糖">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-07T05:13:41.898Z">
+<meta property="og:updated_time" content="2018-01-17T03:36:34.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSX - React 笔记">
-<meta name="twitter:description" content="JSX JSX(js xml)是React中的语法糖  例子12345678910class A extends React.Componet &amp;#123;    render() &amp;#123;        return (            &amp;lt;div className=&amp;quot;app&amp;quot;&amp;gt;                This is JSX">
+<meta name="twitter:description" content="JSX JSX(js xml)是React中的语法糖">
 
 
 
@@ -408,6 +408,7 @@
         <h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><blockquote>
 <p>JSX(js xml)是React中的语法糖</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class A extends React.Componet &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;app&quot;&gt;</span><br><span class="line">                This is JSX</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h2 id="JSX本身其实也是一种表达式"><a href="#JSX本身其实也是一种表达式" class="headerlink" title="JSX本身其实也是一种表达式:"></a>JSX本身其实也是一种表达式:</h2><p>在编译之后呢，JSX 其实会被转化为普通的 JavaScript 对象。<br>意味着可以把它赋值给变量，当做函数传入和返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">var a = &lt;div&gt;exp&lt;/div&gt;; </span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&quot;app&quot;&gt;</span><br><span class="line">            &#123;a&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <h2 id="在JSX使用表达式需要在-花扣号内中写"><a href="#在JSX使用表达式需要在-花扣号内中写" class="headerlink" title="在JSX使用表达式需要在{}花扣号内中写:"></a>在JSX使用表达式需要在{}花扣号内中写:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">render() &#123;</span><br><span class="line">        var isTrue = true;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div className=&quot;app&quot; title=&#123;this.props.title&#125;&gt;</span><br><span class="line">                &#123;isTrue &amp;&amp; &lt;div&gt;show div&lt;/div&gt;&#125; // 短路操作</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -543,7 +544,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
