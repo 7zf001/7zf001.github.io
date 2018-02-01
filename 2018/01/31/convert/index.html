@@ -96,14 +96,14 @@
 
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 隐式转换">
+<meta property="og:title" content="JavaScript 关系运算符与相等运算符强制转换的问题">
 <meta property="og:url" content="https://7zf001.github.io/2018/01/31/convert/index.html">
 <meta property="og:site_name" content="Jeff Tam">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.brandontillman.com/wp-content/uploads/2016/03/35c738d7-bdf0-4f29-8408-84fbf86a7ae2.png">
-<meta property="og:updated_time" content="2018-01-31T07:15:34.440Z">
+<meta property="og:updated_time" content="2018-02-01T13:11:56.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 隐式转换">
+<meta name="twitter:title" content="JavaScript 关系运算符与相等运算符强制转换的问题">
 <meta name="twitter:image" content="http://www.brandontillman.com/wp-content/uploads/2016/03/35c738d7-bdf0-4f29-8408-84fbf86a7ae2.png">
 
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>JavaScript 隐式转换 | Jeff Tam</title>
+  <title>JavaScript 关系运算符与相等运算符强制转换的问题 | Jeff Tam</title>
   
 
 
@@ -299,7 +299,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript 隐式转换</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript 关系运算符与相等运算符强制转换的问题</h2>
         
 
         <div class="post-meta">
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/2018/01/31/convert/" class="leancloud_visitors" data-flag-title="JavaScript 隐式转换">
+             <span id="/2018/01/31/convert/" class="leancloud_visitors" data-flag-title="JavaScript 关系运算符与相等运算符强制转换的问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,23 +394,46 @@
 
       
         <p><img src="http://www.brandontillman.com/wp-content/uploads/2016/03/35c738d7-bdf0-4f29-8408-84fbf86a7ae2.png" alt="img"><br><a id="more"></a></p>
-<h1 id="精简规则"><a href="#精简规则" class="headerlink" title="精简规则"></a>精简规则</h1><ol>
+<h1 id="相等运算符的精简规则"><a href="#相等运算符的精简规则" class="headerlink" title="相等运算符的精简规则"></a>相等运算符的精简规则</h1><ol>
 <li><p>如果 <code>x</code> 或 <code>y</code> 中有一个或者两个都为 <code>NaN</code>，则返回 <code>false</code>；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;= NaN == NaN</span><br><span class="line">=&gt; false</span><br><span class="line"></span><br><span class="line">&lt;= NaN == 1</span><br><span class="line">=&gt; false</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>如果 <code>x</code> 与 <code>y</code> 皆为 <code>null</code> 或 <code>undefined</code> 中的一种类型，则返回 true；否则返回 false；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;= null == undefined</span><br><span class="line">=&gt; true</span><br><span class="line"></span><br><span class="line">&lt;= null == null</span><br><span class="line">=&gt; true</span><br><span class="line"></span><br><span class="line">&lt;= null == 0</span><br><span class="line">=&gt; false</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果 <code>x</code> 与 <code>y</code> 类型不一致，且 <code>x</code>,<code>y</code> 为 <code>String、Number、Boolean</code> 中的某一类型，则将 <code>x</code>,<code>y</code> 中非Number类型的一方使用 <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.3" target="_blank" rel="noopener">ToNumber</a> 函数转化为 <code>Number</code> 类型再进行比较；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 如果 x 的类型为Number，y 的类型为String</span><br><span class="line">x == ToNumber(y)</span><br><span class="line">// 如果 x 的类型为Boolean，y 的类型为Number</span><br><span class="line">ToNumber(x) == y</span><br></pre></td></tr></table></figure>
+<li><p>如果 <code>x</code> 与 <code>y</code> 皆为 <code>String、Number、Boolean</code> 中的某一类型，则将 <code>x</code>,<code>y</code> 中非Number类型的一方使用 <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.3" target="_blank" rel="noopener">ToNumber</a> 函数转化为 <code>Number</code> 类型再进行比较；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 如果 x 的类型为Number，y 的类型为String</span><br><span class="line">x == ToNumber(y)</span><br><span class="line">// 如果 x 的类型为Boolean，y 的类型为Number</span><br><span class="line">ToNumber(x) == y</span><br><span class="line">// 如果 x 的类型为Boolean，y 的类型为String</span><br><span class="line">ToNumber(x) == ToNumber(y)</span><br><span class="line">例如：</span><br><span class="line">&quot;1&quot; == true // true</span><br><span class="line">&quot;123&quot; == true // false</span><br><span class="line">&quot;0&quot; == false // true</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果 x，y 中有一个为 Object，则首先使用 <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.1" target="_blank" rel="noopener">ToPrimitive</a> 函数将其转化为原始类型，再进行比较。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 如果 x 的类型为 Number 或 String，y 的类型是 Object</span><br><span class="line">x == ToPrimitive(y)</span><br></pre></td></tr></table></figure>
+<li><p>如果 x，y 中有一个为 Object，另外一个是 <code>Number</code> 或 <code>String</code>，则首先使用 <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-9.1" target="_blank" rel="noopener">ToPrimitive</a> 函数将Object转化为原始类型，再进行比较。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 如果 x 的类型为 Number 或 String，y 的类型是 Object</span><br><span class="line">x == ToPrimitive(y)</span><br><span class="line">// 出现一方是Boolean， 另一方是Object</span><br><span class="line">&#123;&#125; == true // 会报错，把前面的&#123;&#125;视为了代码块</span><br><span class="line">true == &#123;&#125; // false</span><br><span class="line">var a = &#123;&#125;</span><br><span class="line">a == true // false</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>不符合以上规则，则返回 <code>false</code></p>
+<li><p>等于运算符并不总是传递的。 例如，可能有两个不同的String对象，每个都表示相同的String值; 每个String对象将被认为与==运算符的String值相等，但是两个String对象不会相等。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;= new String(&quot;a&quot;) == &quot;a&quot; and &quot;a&quot; == new String(&quot;a&quot;)</span><br><span class="line">=&gt; true.</span><br><span class="line"></span><br><span class="line">&lt;= new String(&quot;a&quot;) == new String(&quot;a&quot;)</span><br><span class="line">=&gt; false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当 x，y 皆为 Object 类型，则会判断两者是否（指针）指向都一个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;</span><br><span class="line">&lt;= a == a</span><br><span class="line">=&gt; true</span><br><span class="line"></span><br><span class="line">&lt;= &#123;&#125; == &#123;&#125; // 此时前者&#123;&#125;不是代码块...e</span><br><span class="line">=&gt; false</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<h1 id="关系运算符的精简规则"><a href="#关系运算符的精简规则" class="headerlink" title="关系运算符的精简规则"></a>关系运算符的精简规则</h1><p>与相等运算符的规则大致一样，但是一方是Number类型，另一方为其他类型是总是为强制转换Number，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;= null &gt;= 0</span><br><span class="line">=&gt; true // null 转换为 0</span><br><span class="line"></span><br><span class="line">&lt;= null == 0 </span><br><span class="line">=&gt; false // 相等运算符不会将null转换为0</span><br></pre></td></tr></table></figure>
 <h1 id="ToPrimitive"><a href="#ToPrimitive" class="headerlink" title="ToPrimitive"></a>ToPrimitive</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var ToPrimitive = function(obj,preferredType)&#123;</span><br><span class="line">  var APIs = &#123;</span><br><span class="line">    typeOf: function(obj)&#123;</span><br><span class="line">      return Object.prototype.toString.call(obj).slice(8,-1);</span><br><span class="line">    &#125;,</span><br><span class="line">    isPrimitive: function(obj)&#123;</span><br><span class="line">      var _this = this,</span><br><span class="line">          types = [&apos;Null&apos;,&apos;Undefined&apos;,&apos;String&apos;,&apos;Boolean&apos;,&apos;Number&apos;];</span><br><span class="line">      return types.indexOf(_this.typeOf(obj)) !== -1; </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  // 如果 obj 本身已经是原始对象，则直接返回</span><br><span class="line">  if(APIs.isPrimitive(obj)) &#123;return obj;&#125;</span><br><span class="line">  </span><br><span class="line">  // 对于 Date 类型，会优先使用其 toString 方法；否则优先使用 valueOf 方法</span><br><span class="line">  preferredType = (preferredType === &apos;String&apos; || APIs.typeOf(obj) === &apos;Date&apos; ) ? &apos;String&apos; : &apos;Number&apos;;</span><br><span class="line">  if(preferredType===&apos;Number&apos;)&#123;</span><br><span class="line">    if(APIs.isPrimitive(obj.valueOf())) &#123; return obj.valueOf()&#125;;</span><br><span class="line">    if(APIs.isPrimitive(obj.toString())) &#123; return obj.toString()&#125;;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    if(APIs.isPrimitive(obj.toString())) &#123; return obj.toString()&#125;;</span><br><span class="line">    if(APIs.isPrimitive(obj.valueOf())) &#123; return obj.valueOf()&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  throw new TypeError(&apos;TypeError&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="”10”"><a href="#”10”" class="headerlink" title="++[[]][+[]]+[+[]]==”10”"></a>++[[]][+[]]+[+[]]==”10”</h1><p>首先拆分开来描述，它等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++[[]][+[]]</span><br><span class="line">+</span><br><span class="line">[+[]]</span><br></pre></td></tr></table></figure>
+<p>第一行与第三行的<code>+[]</code> 可强制转换为 Number 结果为 <code>0</code>，得出下方结论：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++[[]][0]</span><br><span class="line">+</span><br><span class="line">[0]</span><br></pre></td></tr></table></figure>
+<p>第一行：<code>[[]][0]</code> 的意思是指获取数组的索引为0的值得出结果：</p>
+<ul>
+<li><code>[[]][0]</code>返回<code>[]</code>，</li>
+</ul>
+<h1 id="null-gt-0-返回-true-而null-0-null-gt-0-返回-false"><a href="#null-gt-0-返回-true-而null-0-null-gt-0-返回-false" class="headerlink" title="null &gt;= 0 返回 true, 而null == 0 || null &gt; 0 返回 false"></a>null &gt;= 0 返回 true, 而null == 0 || null &gt; 0 返回 false</h1><ol>
+<li><p>关系运算符 &lt; &gt; 和 相等运算符 == 并不是一个类别的.</p>
+</li>
+<li><p>关系运算符,在设计上,总是需要运算元尝试转为一个number . 而相等运算符在设计上,则没有这方面的考虑.</p>
+</li>
+<li><p>最重要的一点, 不要把 拿 a &gt; b , a == b 的结果 想当然的去和 a &gt;= b 建立联系. 正确的符合最初设计思想的关系是 a &gt; b 与 a &gt;= b是一组 . a == b 和其他相等运算符才是一组. 比如 a === b , a != b, a !== b .</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">null &gt; 0     //  null 尝试转型为number , 则为0 . 所以结果为 false, </span><br><span class="line">null &gt;= 0    //  null 尝试转为number ,则为0 , 结果为 true. </span><br><span class="line">null == 0    //  null在设计上，在此处不尝试转型. 所以 结果为false.</span><br></pre></td></tr></table></figure>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/29064256" target="_blank" rel="noopener">王下邀月熊</a><br><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3" target="_blank" rel="noopener">ECMA-262</a><br><a href="https://stackoverflow.com/questions/2910495/why-null-0-null-0-but-not-null-0" target="_blank" rel="noopener">Why <code>null &gt;= 0 &amp;&amp; null &lt;= 0</code> but not <code>null == 0</code>?</a></p>
 
       
@@ -617,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#精简规则"><span class="nav-number">1.</span> <span class="nav-text">精简规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">2.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相等运算符的精简规则"><span class="nav-number">1.</span> <span class="nav-text">相等运算符的精简规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关系运算符的精简规则"><span class="nav-number">2.</span> <span class="nav-text">关系运算符的精简规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ToPrimitive"><span class="nav-number">3.</span> <span class="nav-text">ToPrimitive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#”10”"><span class="nav-number">4.</span> <span class="nav-text">++[[]][+[]]+[+[]]==”10”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null-gt-0-返回-true-而null-0-null-gt-0-返回-false"><span class="nav-number">5.</span> <span class="nav-text">null >= 0 返回 true, 而null == 0 || null > 0 返回 false</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -780,7 +803,7 @@
         var disqus_config = function () {
           this.page.url = 'https://7zf001.github.io/2018/01/31/convert/';
           this.page.identifier = '2018/01/31/convert/';
-          this.page.title = 'JavaScript 隐式转换';
+          this.page.title = 'JavaScript 关系运算符与相等运算符强制转换的问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://7zf.disqus.com/embed.js';
