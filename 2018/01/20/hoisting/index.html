@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -100,11 +100,11 @@
 <meta property="og:url" content="https://7zf001.github.io/2018/01/20/hoisting/index.html">
 <meta property="og:site_name" content="Jeff Tam">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blog.guinatal.com/wp-content/uploads/2015/10/hoisting.jpg">
-<meta property="og:updated_time" content="2018-01-20T08:50:44.188Z">
+<meta property="og:image" content="http://a.hiphotos.baidu.com/image/pic/item/500fd9f9d72a6059f550a1832334349b023bbae3.jpg">
+<meta property="og:updated_time" content="2018-02-11T05:52:48.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 函数声明与变量声明的&quot;坑&quot;">
-<meta name="twitter:image" content="http://blog.guinatal.com/wp-content/uploads/2015/10/hoisting.jpg">
+<meta name="twitter:image" content="http://a.hiphotos.baidu.com/image/pic/item/500fd9f9d72a6059f550a1832334349b023bbae3.jpg">
 
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -371,8 +371,8 @@
       
 
       
-        <p><img src="http://blog.guinatal.com/wp-content/uploads/2015/10/hoisting.jpg" alt="出自http://blog.guinatal.com/"><br><a id="more"></a></p>
-<h1 id="到底谁是优先"><a href="#到底谁是优先" class="headerlink" title="到底谁是优先?"></a>到底谁是优先?</h1><p>同时声明一个标识符<code>a</code>，一个是变量声明，一个是函数声明，</p>
+        <p><img src="http://a.hiphotos.baidu.com/image/pic/item/500fd9f9d72a6059f550a1832334349b023bbae3.jpg" alt="img"><br><a id="more"></a></p>
+<h1 id="函数声明与变量声明到底谁是优先"><a href="#函数声明与变量声明到底谁是优先" class="headerlink" title="函数声明与变量声明到底谁是优先?"></a>函数声明与变量声明到底谁是优先?</h1><p>同时声明一个标识符<code>a</code>，一个是变量声明，一个是函数声明，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br><span class="line"></span><br><span class="line">console.log(typeof a); // =&gt; &apos;function&apos;</span><br><span class="line"></span><br><span class="line">function a() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们知道在JavaScript中存在Hoisting变量提升的概念，遇到以上实例的情况，我们首先得到一个答案，即：在编译词法分析阶段，<strong><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md" target="_blank" rel="noopener">优先对函数声明进行提升，然后才是变量</a></strong>，询问在同一个作用域的集合中是否存在变量<code>a</code>，有则忽略，没有则要求作用域中声明一个新的变量<code>a</code>，然后遇到<code>var a</code>时被忽略了。(不管如何移动上面的代码都不会影响结果)</p>
 <h1 id="在条件句内的”坑”"><a href="#在条件句内的”坑”" class="headerlink" title="在条件句内的”坑”"></a>在条件句内的”坑”</h1><p>当我们想去用<code>if</code>语句来判断执行那个函数时</p>
@@ -585,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#到底谁是优先"><span class="nav-number">1.</span> <span class="nav-text">到底谁是优先?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在条件句内的”坑”"><span class="nav-number">2.</span> <span class="nav-text">在条件句内的”坑”</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数声明与变量声明到底谁是优先"><span class="nav-number">1.</span> <span class="nav-text">函数声明与变量声明到底谁是优先?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在条件句内的”坑”"><span class="nav-number">2.</span> <span class="nav-text">在条件句内的”坑”</span></a></li></ol></div>
             
 
           </div>
@@ -623,7 +623,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Gemini
   </a>
 </div>
 
@@ -711,6 +711,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
