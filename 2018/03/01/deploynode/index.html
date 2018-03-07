@@ -94,18 +94,17 @@
 
 
 
-<meta name="description" content="序言把你亲亲苦苦码出来的 “孩子” 买个家还要给你的 “家” 购买个 “名字”但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了这次我是用ubuntu系统">
 <meta name="keywords" content="mongodb,node,nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署环境 Node + mongodb + nginx">
 <meta property="og:url" content="https://7zf001.github.io/2018/03/01/deploynode/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="序言把你亲亲苦苦码出来的 “孩子” 买个家还要给你的 “家” 购买个 “名字”但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了这次我是用ubuntu系统">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T08:34:47.036Z">
+<meta property="og:image" content="https://7zf001.github.io/2018/03/01/deploynode/%27http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png%27">
+<meta property="og:updated_time" content="2018-03-07T12:42:18.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署环境 Node + mongodb + nginx">
-<meta name="twitter:description" content="序言把你亲亲苦苦码出来的 “孩子” 买个家还要给你的 “家” 购买个 “名字”但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了这次我是用ubuntu系统">
+<meta name="twitter:image" content="https://7zf001.github.io/2018/03/01/deploynode/%27http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png%27">
 
 
 
@@ -405,14 +404,15 @@
       
 
       
-        <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>把你亲亲苦苦码出来的 “孩子” 买个家<br>还要给你的 “家” 购买个 “名字”<br>但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了<br>这次我是用ubuntu系统<br><a id="more"></a></p>
+        <p><img src="&#39;http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png&#39;" alt="images"><br><a id="more"></a></p>
+<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>把你亲亲苦苦码出来的 “孩子” 买个家<br>还要给你的 “家” 购买个 “名字”<br>但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了<br>这次我是用ubuntu系统</p>
 <h1 id="IPtables-amp-amp-Fail2Ban-给你的家做点安全措施"><a href="#IPtables-amp-amp-Fail2Ban-给你的家做点安全措施" class="headerlink" title="IPtables &amp;&amp; Fail2Ban : 给你的家做点安全措施"></a>IPtables &amp;&amp; Fail2Ban : 给你的家做点安全措施</h1><h2 id="修改ssh-port"><a href="#修改ssh-port" class="headerlink" title="修改ssh port"></a>修改ssh port</h2><p>进入sshd配置文件中：<br><code>sudo vim /etc/ssh/sshd_config</code></p>
 <p>修改以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 修改端口 ssh 只能到这个端口进来，不能用0 ~ 1024， 可用范围 1024 ~ 65535</span><br><span class="line">Port *****</span><br><span class="line"></span><br><span class="line"># 把root登录关闭</span><br><span class="line">PermitRootLogin no</span><br><span class="line"></span><br><span class="line"># 这里修改你登录的用户</span><br><span class="line">AllowUsers &lt;你登录的用户&gt;</span><br></pre></td></tr></table></figure></p>
 <p>重启你的ssh<br><code>sudo service ssh restart</code></p>
 <h2 id="IPtables-设置"><a href="#IPtables-设置" class="headerlink" title="IPtables 设置"></a>IPtables 设置</h2><p><strong>这一步需要细心点，建议打开多个连接</strong></p>
-<p>清空防火墙设置<br><code>sudo iptables -F</code></p>
+<p>清除预设表filter中的所有规则链的规则<br><code>sudo iptables -F</code></p>
 <p>新建文件<br><code>sudo vim /etc/iptables.up.rules</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">*filter</span><br><span class="line"></span><br><span class="line"># allow all connections</span><br><span class="line">-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow out traffic</span><br><span class="line">-A OUTPUT -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow http https</span><br><span class="line">-A INPUT -p tcp --dport 443 -j ACCEPT </span><br><span class="line">-A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp --dport 8081 -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow ssh port login， ***** 是你通过ssh进入服务器的端口</span><br><span class="line">-A INPUT -p tcp -m state --state NEW --dport ***** -j ACCEPT</span><br><span class="line"></span><br><span class="line"># ping </span><br><span class="line">-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT </span><br><span class="line"></span><br><span class="line"># log denied calls</span><br><span class="line">-A INPUT -m limit --limit 5/min -j LOG --log-prefix &quot;iptables denied:&quot; --log-level 7</span><br><span class="line"></span><br><span class="line"># reject all other inbound</span><br><span class="line">-A INPUT -j REJECT</span><br><span class="line">-A FORWARD -j REJECT</span><br><span class="line"></span><br><span class="line">COMMIT</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">*filter</span><br><span class="line"></span><br><span class="line"># allow all connections</span><br><span class="line">-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow out traffic</span><br><span class="line">-A OUTPUT -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow http https</span><br><span class="line">-A INPUT -p tcp --dport 443 -j ACCEPT </span><br><span class="line">-A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">-A INPUT -p tcp --dport 8081 -j ACCEPT</span><br><span class="line"></span><br><span class="line"># allow ssh port login， ***** 是你通过ssh进入服务器的端口</span><br><span class="line">-A INPUT -p tcp -m state --state NEW --dport ***** -j ACCEPT</span><br><span class="line"></span><br><span class="line"># ping </span><br><span class="line">-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT </span><br><span class="line"></span><br><span class="line"># mongodb connect</span><br><span class="line">-A INPUT -s 127.0.0.1 -p tcp --destination-port 27017 -m state --state NEW,ESTABLISHED -j ACCEPT</span><br><span class="line">-A OUTPUT -d 127.0.0.1 -p tcp --source-port 27017 -m state --state ESTABLISHED -j ACCEPT</span><br><span class="line"></span><br><span class="line"># log denied calls</span><br><span class="line">-A INPUT -m limit --limit 5/min -j LOG --log-prefix &quot;iptables denied:&quot; --log-level 7</span><br><span class="line"></span><br><span class="line">#防止DDOS攻击</span><br><span class="line">-A INPUT  -p tcp --syn -m limit --limit 12/s --limit-burst 24 -j ACCEPT</span><br><span class="line">-A FORWARD -p tcp --syn -m limit --limit 1/s -j ACCEPT</span><br><span class="line">#防CC攻击</span><br><span class="line">#单个IP最大并发连接数为30</span><br><span class="line">-I INPUT -p tcp --dport 80 -m connlimit  --connlimit-above 30 -j REJECT</span><br><span class="line">#单个IP在60秒内允许建立的连接数为60个</span><br><span class="line">-A INPUT -p tcp --dport 80 -m recent --name BAD_HTTP_ACCESS --update --seconds 60 --hitcount 60 -j REJECT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># reject all other inbound</span><br><span class="line">-A INPUT -j REJECT</span><br><span class="line">-A FORWARD -j REJECT</span><br><span class="line"></span><br><span class="line">COMMIT</span><br></pre></td></tr></table></figure>
 <p>确定无误后，执行<br><code>sudo iptables-restore &lt; /etc/iptables.up.rules</code></p>
 <p>启动防火墙<br><code>sudo ufw enable</code></p>
 <p>让防火墙自动开启：<br><code>sudo vim /etc/network/if-up.d/iptables</code></p>
@@ -464,7 +464,7 @@
 </ol>
 <p>一般用npm网络不是太慢时，还是建议用npm。</p>
 <p>如果是时用npm太慢时，可以用cnpm进行同步下载。<br><code>cnpm sync &lt;backage-name&gt;</code></p>
-<h1 id="SSL-：-让每个人带着白帽子进来"><a href="#SSL-：-让每个人带着白帽子进来" class="headerlink" title="SSL ： 让每个人带着白帽子进来"></a>SSL ： 让每个人带着白帽子进来</h1><h1 id="Git-私有仓库-：-托儿所"><a href="#Git-私有仓库-：-托儿所" class="headerlink" title="Git 私有仓库 ： 托儿所"></a>Git 私有仓库 ： 托儿所</h1><h1 id="PM2-：-请个司机把托儿的孩子接回来"><a href="#PM2-：-请个司机把托儿的孩子接回来" class="headerlink" title="PM2 ： 请个司机把托儿的孩子接回来"></a>PM2 ： 请个司机把托儿的孩子接回来</h1><h2 id="使用-PM2"><a href="#使用-PM2" class="headerlink" title="使用 PM2"></a>使用 PM2</h2><ol>
+<h1 id="SSL-：-让每个人带着白帽子进来"><a href="#SSL-：-让每个人带着白帽子进来" class="headerlink" title="SSL ： 让每个人带着白帽子进来"></a>SSL ： 让每个人带着白帽子进来</h1><h1 id="Git-私有仓库-：-托儿所"><a href="#Git-私有仓库-：-托儿所" class="headerlink" title="Git 私有仓库 ： 托儿所"></a>Git 私有仓库 ： 托儿所</h1><h1 id="使用-PM2-管理-node-服务进程"><a href="#使用-PM2-管理-node-服务进程" class="headerlink" title="使用 PM2 管理 node 服务进程"></a>使用 PM2 管理 node 服务进程</h1><h2 id="使用-PM2"><a href="#使用-PM2" class="headerlink" title="使用 PM2"></a>使用 PM2</h2><ol>
 <li>新建文件app.js<br><code>mkdir -p ~/webroot/app</code><br><code>cd ~/webroot/app</code><br><code>vim app.js</code></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// app.js</span><br><span class="line">const http = require(&apos;http&apos;)</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">  res.writeHead(200, &#123;&apos;Content-Type&apos;: &apos;text/plain&apos;&#125;)</span><br><span class="line">  res.end(&apos;hello wrold&apos;)</span><br><span class="line">&#125;).listen(8081)</span><br><span class="line"></span><br><span class="line">console.log(&apos;server runing successful!!&apos;)</span><br></pre></td></tr></table></figure>
@@ -499,6 +499,30 @@
 </ol>
 <p>显示一下证明没问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf test is successful</span><br></pre></td></tr></table></figure></p>
 <p>重启nginx<br><code>sudo nginx -s reload</code><br>or<br><code>sudo service nginx reload</code></p>
+<h1 id="安装-mongodb"><a href="#安装-mongodb" class="headerlink" title="安装 mongodb"></a>安装 mongodb</h1><p><a href="https://docs.mongodb.com" target="_blank" rel="noopener">mongodb官网</a></p>
+<p><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank" rel="noopener">ubtuntu install mongodb</a></p>
+<p>根据官方提供的命令行进行下载和安装。</p>
+<p>启动mongod<br><code>sudo service mongod start</code></p>
+<p>停止mongod<br><code>sudo service mongod stop</code></p>
+<p>重启mongod<br><code>sudo service mongod restart</code></p>
+<h2 id="修改端口"><a href="#修改端口" class="headerlink" title="修改端口"></a>修改端口</h2><ol>
+<li><p>进入conf配置<br><code>sudo vim /etc/mongod.conf</code></p>
+</li>
+<li><p>修改port端口<br><code>port: 27017</code> =&gt; <code>port: 19999</code></p>
+</li>
+<li><p>修改防火墙</p>
+</li>
+<li><p>重新载入防火墙</p>
+</li>
+<li><p>指定端口进入mongodb<br><code>mongo --port 19999</code></p>
+</li>
+<li><p>数据库导入<br>mongorestore -d <db-name> <db-backup-path-file><br><db-name>： 数据库名字<br><db-backup-path-file>： 数据库备份目录    </db-backup-path-file></db-name></db-backup-path-file></db-name></p>
+</li>
+<li><p>进入mongodb<br><code>mongo</code></p>
+</li>
+</ol>
+<p><code>use &lt;db-name&gt;</code></p>
+<p><code>show tables</code></p>
 
       
     </div>
@@ -542,6 +566,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/07/mongodb_note/" rel="prev" title="实践Mongodb之权限管理">
+                实践Mongodb之权限管理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +653,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -636,7 +664,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -647,7 +675,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -706,7 +734,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IPtables-amp-amp-Fail2Ban-给你的家做点安全措施"><span class="nav-number">2.</span> <span class="nav-text">IPtables && Fail2Ban : 给你的家做点安全措施</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ssh-port"><span class="nav-number">2.1.</span> <span class="nav-text">修改ssh port</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPtables-设置"><span class="nav-number">2.2.</span> <span class="nav-text">IPtables 设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fail2ban"><span class="nav-number">2.3.</span> <span class="nav-text">fail2ban:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-nvm-node版本管理"><span class="nav-number">3.</span> <span class="nav-text">安装 nvm (node版本管理)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改npm国内镜像源并安装npm"><span class="nav-number">3.1.</span> <span class="nav-text">修改npm国内镜像源并安装npm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSL-：-让每个人带着白帽子进来"><span class="nav-number">4.</span> <span class="nav-text">SSL ： 让每个人带着白帽子进来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-私有仓库-：-托儿所"><span class="nav-number">5.</span> <span class="nav-text">Git 私有仓库 ： 托儿所</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PM2-：-请个司机把托儿的孩子接回来"><span class="nav-number">6.</span> <span class="nav-text">PM2 ： 请个司机把托儿的孩子接回来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-PM2"><span class="nav-number">6.1.</span> <span class="nav-text">使用 PM2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-nginx"><span class="nav-number">7.</span> <span class="nav-text">安装 nginx</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IPtables-amp-amp-Fail2Ban-给你的家做点安全措施"><span class="nav-number">2.</span> <span class="nav-text">IPtables && Fail2Ban : 给你的家做点安全措施</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改ssh-port"><span class="nav-number">2.1.</span> <span class="nav-text">修改ssh port</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPtables-设置"><span class="nav-number">2.2.</span> <span class="nav-text">IPtables 设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fail2ban"><span class="nav-number">2.3.</span> <span class="nav-text">fail2ban:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-nvm-node版本管理"><span class="nav-number">3.</span> <span class="nav-text">安装 nvm (node版本管理)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改npm国内镜像源并安装npm"><span class="nav-number">3.1.</span> <span class="nav-text">修改npm国内镜像源并安装npm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSL-：-让每个人带着白帽子进来"><span class="nav-number">4.</span> <span class="nav-text">SSL ： 让每个人带着白帽子进来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-私有仓库-：-托儿所"><span class="nav-number">5.</span> <span class="nav-text">Git 私有仓库 ： 托儿所</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用-PM2-管理-node-服务进程"><span class="nav-number">6.</span> <span class="nav-text">使用 PM2 管理 node 服务进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-PM2"><span class="nav-number">6.1.</span> <span class="nav-text">使用 PM2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-nginx"><span class="nav-number">7.</span> <span class="nav-text">安装 nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装-mongodb"><span class="nav-number">8.</span> <span class="nav-text">安装 mongodb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改端口"><span class="nav-number">8.1.</span> <span class="nav-text">修改端口</span></a></li></ol></li></ol></div>
             
 
           </div>

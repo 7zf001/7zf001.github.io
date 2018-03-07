@@ -97,7 +97,7 @@
 <meta name="description" content="像天上的流云，江河中的流水。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jeff Tam">
-<meta property="og:url" content="https://7zf001.github.io/tags/mongodb/index.html">
+<meta property="og:url" content="https://7zf001.github.io/tags/Mongodb/index.html">
 <meta property="og:site_name" content="Jeff Tam">
 <meta property="og:description" content="像天上的流云，江河中的流水。">
 <meta property="og:locale" content="zh-Hans">
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://7zf001.github.io/tags/mongodb/"/>
+  <link rel="canonical" href="https://7zf001.github.io/tags/Mongodb/"/>
 
 
 
 
 
-  <title>标签: mongodb | Jeff Tam</title>
+  <title>标签: Mongodb | Jeff Tam</title>
   
 
 
@@ -274,7 +274,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>mongodb<small>标签</small>
+        <h2>Mongodb<small>标签</small>
         </h2>
       </div>
 
@@ -286,37 +286,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/03/01/deploynode/" itemprop="url">
+            <a class="post-title-link" href="/2018/03/07/mongodb_note/" itemprop="url">
               
-                <span itemprop="name">部署环境 Node + mongodb + nginx</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T13:11:33+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/10/linuxmongodb/" itemprop="url">
-              
-                <span itemprop="name">linux - centos7下mongodb安装</span>
+                <span itemprop="name">实践Mongodb之权限管理</span>
               
             </a>
         
@@ -324,9 +296,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-10T22:40:58+08:00"
-              content="2018-01-10" >
-          01-10
+              datetime="2018-03-07T19:31:36+08:00"
+              content="2018-03-07" >
+          03-07
         </time>
       </div>
 
@@ -386,7 +358,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -397,7 +369,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -408,7 +380,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -722,6 +694,44 @@
               },
               error: function(newcounter, error) {
                 console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
+
+  
+
+</body>
+</html>
+sole.log('Failed to create');
               }
             });
           }
