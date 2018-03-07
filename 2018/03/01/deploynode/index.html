@@ -100,11 +100,11 @@
 <meta property="og:url" content="https://7zf001.github.io/2018/03/01/deploynode/index.html">
 <meta property="og:site_name" content="Jeff Tam">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://7zf001.github.io/2018/03/01/deploynode/%27http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png%27">
-<meta property="og:updated_time" content="2018-03-07T12:42:18.006Z">
+<meta property="og:image" content="http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png">
+<meta property="og:updated_time" content="2018-03-07T13:03:04.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署环境 Node + mongodb + nginx">
-<meta name="twitter:image" content="https://7zf001.github.io/2018/03/01/deploynode/%27http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png%27">
+<meta name="twitter:image" content="http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png">
 
 
 
@@ -404,7 +404,7 @@
       
 
       
-        <p><img src="&#39;http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png&#39;" alt="images"><br><a id="more"></a></p>
+        <p><img src="http://p57xkau1y.bkt.clouddn.com/working_hard_dribbble_1x.png" alt="images"><br><a id="more"></a></p>
 <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>把你亲亲苦苦码出来的 “孩子” 买个家<br>还要给你的 “家” 购买个 “名字”<br>但是 “家” 啥都没，是时候为你的 “家” 做一次构建行动了<br>这次我是用ubuntu系统</p>
 <h1 id="IPtables-amp-amp-Fail2Ban-给你的家做点安全措施"><a href="#IPtables-amp-amp-Fail2Ban-给你的家做点安全措施" class="headerlink" title="IPtables &amp;&amp; Fail2Ban : 给你的家做点安全措施"></a>IPtables &amp;&amp; Fail2Ban : 给你的家做点安全措施</h1><h2 id="修改ssh-port"><a href="#修改ssh-port" class="headerlink" title="修改ssh port"></a>修改ssh port</h2><p>进入sshd配置文件中：<br><code>sudo vim /etc/ssh/sshd_config</code></p>
 <p>修改以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 修改端口 ssh 只能到这个端口进来，不能用0 ~ 1024， 可用范围 1024 ~ 65535</span><br><span class="line">Port *****</span><br><span class="line"></span><br><span class="line"># 把root登录关闭</span><br><span class="line">PermitRootLogin no</span><br><span class="line"></span><br><span class="line"># 这里修改你登录的用户</span><br><span class="line">AllowUsers &lt;你登录的用户&gt;</span><br></pre></td></tr></table></figure></p>
