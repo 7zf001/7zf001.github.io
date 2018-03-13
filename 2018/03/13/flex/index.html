@@ -94,22 +94,26 @@
 
 
 
-<meta name="description" content="弹性盒子属性 图中是一个 flex-direction 属性为 row 的弹性容器">
+<meta name="description" content="弹性盒子">
 <meta name="keywords" content="css,flex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flex 弹性布局详解">
 <meta property="og:url" content="https://7zf001.github.io/2018/03/13/flex/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="弹性盒子属性 图中是一个 flex-direction 属性为 row 的弹性容器">
+<meta property="og:description" content="弹性盒子">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/15614/Basics1.png">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/15615/Basics2.png">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/15616/Basics3.png">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/15617/Basics4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow3.png">
-<meta property="og:updated_time" content="2018-03-13T02:59:49.367Z">
+<meta property="og:updated_time" content="2018-03-13T03:22:19.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex 弹性布局详解">
-<meta name="twitter:description" content="弹性盒子属性 图中是一个 flex-direction 属性为 row 的弹性容器">
+<meta name="twitter:description" content="弹性盒子">
 <meta name="twitter:image" content="https://mdn.mozillademos.org/files/12998/flexbox.png">
 
 
@@ -399,27 +403,32 @@
       
 
       
-        <h1 id="弹性盒子属性"><a href="#弹性盒子属性" class="headerlink" title="弹性盒子属性"></a>弹性盒子属性</h1><blockquote>
-<p><strong>图中是一个 <code>flex-direction</code> 属性为 <code>row</code> 的弹性容器</strong></p>
-</blockquote>
-<p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt=""></p>
+        <h1 id="弹性盒子"><a href="#弹性盒子" class="headerlink" title="弹性盒子"></a>弹性盒子</h1><p><img src="https://mdn.mozillademos.org/files/12998/flexbox.png" alt=""></p>
 <a id="more"></a>
-<h1 id="怎么使用flexbox"><a href="#怎么使用flexbox" class="headerlink" title="怎么使用flexbox"></a>怎么使用flexbox</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  outline: 1px solid grey;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: red;</span><br><span class="line">  outline: 1px solid #000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="怎么使用flexbox"><a href="#怎么使用flexbox" class="headerlink" title="怎么使用flexbox"></a>怎么使用flexbox</h1><blockquote>
+<p>通过设置 <code>display</code> 属性的值为 <code>flex</code> 或 <code>inline-flex</code> 来定义弹性容器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  outline: 1px solid grey;</span><br><span class="line">&#125;</span><br><span class="line">.child &#123;</span><br><span class="line">  width: 50px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: red;</span><br><span class="line">  outline: 1px solid #000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;1&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;2&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;3&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <iframe height="265" scrolling="no" title="GxpxGG" src="//codepen.io/7zf001/embed/GxpxGG/?height=265&theme-id=0&default-tab=css,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/7zf001/pen/GxpxGG/" target="_blank" rel="noopener">GxpxGG</a> by jeff tam (<a href="https://codepen.io/7zf001" target="_blank" rel="noopener">@7zf001</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
 
-
-
-
-
-
-
-
-
-
-
-
-<h2 id="弹性容器-Flex-container"><a href="#弹性容器-Flex-container" class="headerlink" title="弹性容器(Flex container)"></a>弹性容器(Flex container)</h2><p>包含着弹性项目的父元素。通过设置 <code>display</code> 属性的值为 <code>flex</code> 或 <code>inline-flex</code> 来定义弹性容器。</p>
+<h1 id="理解-flexbox-的两根轴线"><a href="#理解-flexbox-的两根轴线" class="headerlink" title="理解 flexbox 的两根轴线"></a>理解 flexbox 的两根轴线</h1><p>当使用 flex 布局时，首先想到的是两根轴线 — 主轴和交叉轴。主轴由 <code>flex-direction</code>定义，另一根交叉轴垂直于它。我们使用 flexbox 的所有属性都跟这两根轴线有关, 所以有必要在一开始首先理解它。</p>
+<h2 id="主轴"><a href="#主轴" class="headerlink" title="主轴"></a>主轴</h2><p>主轴由 flex-direction 定义，可以取4个值：</p>
+<ul>
+<li>row</li>
+<li>row-reverse</li>
+<li>column</li>
+<li>column-reverse</li>
+</ul>
+<p>如果你选择了 <code>row</code> 或者 <code>row-reverse</code>，你的主轴是左右方向即横向。</p>
+<p><img src="https://mdn.mozillademos.org/files/15614/Basics1.png" alt="flex"></p>
+<p>选择 <code>column</code> 或者 <code>column-reverse</code> 时，主轴会变成沿着上下方向延伸即纵向。</p>
+<p><img src="https://mdn.mozillademos.org/files/15615/Basics2.png" alt="flex"></p>
+<h2 id="交叉轴"><a href="#交叉轴" class="headerlink" title="交叉轴"></a>交叉轴</h2><p>交叉轴是垂直于主轴，所以如果你的flex-direction (主轴) 设成了 row 或者 row-reverse 的话，交叉轴的方向就是上下方向(纵向)。</p>
+<p><img src="https://mdn.mozillademos.org/files/15616/Basics3.png" alt="flex"></p>
+<p>如果主轴方向设成了 column 或者 column-reverse，交叉轴就是横向。</p>
+<p><img src="https://mdn.mozillademos.org/files/15617/Basics4.png" alt="flex"></p>
+<p><strong>理解主轴和交叉轴的概念对于对齐 flexbox 里面的元素是很重要的；flexbox 的特性是沿着主轴或者交叉轴对齐之中的元素。</strong></p>
 <h2 id="弹性项目-Flex-item"><a href="#弹性项目-Flex-item" class="headerlink" title="弹性项目(Flex item)"></a>弹性项目(Flex item)</h2><p>弹性容器的每个子元素都称为<strong>弹性项目</strong>。<strong>弹性容器直接包含的文本将被包覆成匿名弹性单元</strong>。</p>
 <h2 id="轴-Axis"><a href="#轴-Axis" class="headerlink" title="轴(Axis)"></a>轴(Axis)</h2><p>每个弹性框布局包含两个轴。弹性项目沿其依次排列的那根轴称为<strong>主轴(main axis)</strong>。垂直于主轴的那根轴称为<strong>侧轴(cross axis)</strong>。</p>
 <p>以下为flex容器属性:</p>
@@ -678,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子属性"><span class="nav-number">1.</span> <span class="nav-text">弹性盒子属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么使用flexbox"><span class="nav-number">2.</span> <span class="nav-text">怎么使用flexbox</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性容器-Flex-container"><span class="nav-number">2.1.</span> <span class="nav-text">弹性容器(Flex container)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性项目-Flex-item"><span class="nav-number">2.2.</span> <span class="nav-text">弹性项目(Flex item)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轴-Axis"><span class="nav-number">2.3.</span> <span class="nav-text">轴(Axis)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction-确立主轴-初始值-row。"><span class="nav-number">2.3.1.</span> <span class="nav-text">flex-direction 确立主轴, 初始值:row。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content-定义了在当前行上，弹性项目沿主轴-main-axis-如何排布。"><span class="nav-number">2.3.2.</span> <span class="nav-text">justify-content 定义了在当前行上，弹性项目沿主轴(main axis)如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-items-定义了在当前行上，弹性项目沿侧轴默认如何排布。"><span class="nav-number">2.3.3.</span> <span class="nav-text">align-items 定义了在当前行上，弹性项目沿侧轴默认如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-self-定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由-align-items-所确立的默认值。"><span class="nav-number">2.3.4.</span> <span class="nav-text">align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-与-align-content-区别"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">align-items 与 align-content 区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向-Direction"><span class="nav-number">2.4.</span> <span class="nav-text">方向(Direction):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行-Line"><span class="nav-number">2.5.</span> <span class="nav-text">行(Line)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尺寸-Dimension"><span class="nav-number">2.6.</span> <span class="nav-text">尺寸(Dimension)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow"><span class="nav-number">2.6.1.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink"><span class="nav-number">2.6.2.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis"><span class="nav-number">2.6.3.</span> <span class="nav-text">flex-basis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子相关属性"><span class="nav-number">3.</span> <span class="nav-text">弹性盒子相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不影响弹性盒子的属性"><span class="nav-number">3.1.</span> <span class="nav-text">不影响弹性盒子的属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子"><span class="nav-number">1.</span> <span class="nav-text">弹性盒子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么使用flexbox"><span class="nav-number">2.</span> <span class="nav-text">怎么使用flexbox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解-flexbox-的两根轴线"><span class="nav-number">3.</span> <span class="nav-text">理解 flexbox 的两根轴线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主轴"><span class="nav-number">3.1.</span> <span class="nav-text">主轴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交叉轴"><span class="nav-number">3.2.</span> <span class="nav-text">交叉轴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性项目-Flex-item"><span class="nav-number">3.3.</span> <span class="nav-text">弹性项目(Flex item)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轴-Axis"><span class="nav-number">3.4.</span> <span class="nav-text">轴(Axis)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction-确立主轴-初始值-row。"><span class="nav-number">3.4.1.</span> <span class="nav-text">flex-direction 确立主轴, 初始值:row。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content-定义了在当前行上，弹性项目沿主轴-main-axis-如何排布。"><span class="nav-number">3.4.2.</span> <span class="nav-text">justify-content 定义了在当前行上，弹性项目沿主轴(main axis)如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-items-定义了在当前行上，弹性项目沿侧轴默认如何排布。"><span class="nav-number">3.4.3.</span> <span class="nav-text">align-items 定义了在当前行上，弹性项目沿侧轴默认如何排布。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-self-定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由-align-items-所确立的默认值。"><span class="nav-number">3.4.4.</span> <span class="nav-text">align-self 定义了单个弹性项目在侧轴上应当如何对齐，这个定义会覆盖由 align-items 所确立的默认值。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#align-items-与-align-content-区别"><span class="nav-number">3.4.4.1.</span> <span class="nav-text">align-items 与 align-content 区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方向-Direction"><span class="nav-number">3.5.</span> <span class="nav-text">方向(Direction):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行-Line"><span class="nav-number">3.6.</span> <span class="nav-text">行(Line)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尺寸-Dimension"><span class="nav-number">3.7.</span> <span class="nav-text">尺寸(Dimension)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow"><span class="nav-number">3.7.1.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink"><span class="nav-number">3.7.2.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis"><span class="nav-number">3.7.3.</span> <span class="nav-text">flex-basis</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性盒子相关属性"><span class="nav-number">4.</span> <span class="nav-text">弹性盒子相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不影响弹性盒子的属性"><span class="nav-number">4.1.</span> <span class="nav-text">不影响弹性盒子的属性</span></a></li></ol></li></ol></div>
             
 
           </div>
