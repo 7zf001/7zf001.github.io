@@ -114,7 +114,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow3.png">
-<meta property="og:updated_time" content="2018-03-13T15:22:38.172Z">
+<meta property="og:updated_time" content="2018-03-14T15:54:33.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex 弹性布局详解">
 <meta name="twitter:image" content="http://p57xkau1y.bkt.clouddn.com/flexbox.png">
@@ -517,10 +517,13 @@
 </blockquote>
 <p>初始值： auto</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">align-self: auto // 设置为父元素的 align-items 值，如果该元素没有父元素的话，就设置为 stretch。</span><br><span class="line">align-self: flex-start // flex 元素会对齐到 交叉轴 的首端。</span><br><span class="line">align-self: flex-end // flex 元素会对齐到 交叉轴 的尾端。</span><br><span class="line">align-self: center // flex 元素会对齐到 交叉轴 的中间，如果该元素的 cross-size 的尺寸大于 flex 容器，将在两个方向均等溢出。</span><br><span class="line">align-self: baseline // 所有的 flex 元素会沿着基线对齐</span><br><span class="line">align-self: stretch // flex 元素将会基于容器的宽和高，按照自身 margin box 的 cross-size 拉伸。</span><br><span class="line"></span><br><span class="line">align-self: inherit</span><br></pre></td></tr></table></figure>
-<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p><code>flex-grow</code> ：<br><strong>可理解成flex元素<em>占据</em>主轴剩余空间的比例。</strong></p>
-<p>若flex容器width为400px，容器内有3个width为100px弹性盒子项，这时<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow1.png" alt="flex-grow1"></p>
-<p>当对第三个元素添加flex-grow:1，此元素width会扩展剩余的空间，因为其他两个元素默认flex-grow为0,0+0+1=1，第三个元素占100%比例（占用剩余的空间比例）。<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow2.png" alt="flex-grow2"></p>
-<p>若把第二个元素也添加flex-grow:1,此时0+1+1=2，第二、三元素各占剩余空间的50%宽度。<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow3.png" alt="flex-grow3"></p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p><code>flex-grow</code> ：<br><strong>可理解成flex元素<em>占据</em>主轴剩余空间的比例。</strong><br>拉伸的结果是：原始宽度 + 占据剩余宽度</p>
+<p>若flex容器width为<code>400px</code>，容器内有3个flex元素width为<code>100px</code>，这时<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow1.png" alt="flex-grow1"></p>
+<p>当对第三个元素添加flex-grow:1，此元素width会扩展剩余的空间，因为其他两个元素默认flex-grow为0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0 + 0 + 1 = 1;</span><br><span class="line">1/1 = 1 * 100px(剩余空间) = 100px; </span><br><span class="line">100px + 100px = 200px</span><br></pre></td></tr></table></figure></p>
+<p>，第三个元素占100%比例（占用剩余的空间比例），最终结果为<code>200px</code>。</p>
+<p><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow2.png" alt="flex-grow2"></p>
+<p>若把第二个元素也添加flex-grow:1,此时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 + 1 + 1 = 2; </span><br><span class="line">1/2 = 0.5</span><br><span class="line">0.5 * 100 = 50px</span><br><span class="line">100px + 50px = 150px</span><br></pre></td></tr></table></figure></p>
+<p>，第二、三元素各占剩余空间的50%宽度。最终结果各为<code>150px</code>。<br><img src="https://raw.githubusercontent.com/7zf001/toolBox/master/images/flex-grow3.png" alt="flex-grow3"></p>
 <h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><blockquote>
 <p>flex-shrink：属性指定了 flex 元素的收缩规则。</p>
 </blockquote>
