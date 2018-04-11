@@ -103,7 +103,7 @@
 <meta property="og:description" content="React 生命周期">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/7zf001/mine/master/images/reactliftcycle.png">
-<meta property="og:updated_time" content="2018-01-17T03:37:16.097Z">
+<meta property="og:updated_time" content="2018-04-11T14:05:08.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 生命周期详解">
 <meta name="twitter:description" content="React 生命周期">
@@ -409,14 +409,20 @@
       
         <h1 id="React-生命周期"><a href="#React-生命周期" class="headerlink" title="React 生命周期"></a>React 生命周期</h1><p><img src="https://raw.githubusercontent.com/7zf001/mine/master/images/reactliftcycle.png" alt="reactliftcycle"></p>
 <a id="more"></a>
-<h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><p>构造函数，组件初始化</p>
-<h2 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount"></a>componentWillMount</h2><p>组件即将挂载</p>
-<h2 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h2><p>组件已挂载</p>
-<h2 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps"></a>componentWillReceiveProps</h2><p>组件要接受父组件的参数</p>
-<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h2><p>判断是否要更新组件</p>
-<h2 id="componentWillUpdate"><a href="#componentWillUpdate" class="headerlink" title="componentWillUpdate"></a>componentWillUpdate</h2><p>组件即将更新</p>
-<h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><p>组件已更新</p>
-<h2 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h2><p>组件即将卸载</p>
+<blockquote>
+<p>getInitialState 和 getDefaultProps 在 React 15中的createClass中提供着，但在react16被移除了，成一个独立的库(create-react-class)</p>
+</blockquote>
+<h1 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h1><p>constructor: 构造函数，组件初始化</p>
+<p>componentWillMount: 组件即将挂载</p>
+<p>render: 渲染组件</p>
+<p>componentDidMount: 组件已挂载</p>
+<p>componentWillUnmount: 卸载组件</p>
+<h1 id="数据更新阶段"><a href="#数据更新阶段" class="headerlink" title="数据更新阶段"></a>数据更新阶段</h1><p>componentWillReceiveProps: 组件要接受父组件的参数</p>
+<p>shouldComponentUpdate: 判断是否要更新组件</p>
+<p>componentWillUpdate: 组件即将更新</p>
+<p>render: 渲染组件</p>
+<p>componentDidUpdate: 组件已更新</p>
+<p>componentWillUnmount: 组件即将卸载</p>
 
       
     </div>
@@ -635,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-生命周期"><span class="nav-number">1.</span> <span class="nav-text">React 生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">1.1.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillMount"><span class="nav-number">1.2.</span> <span class="nav-text">componentWillMount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidMount"><span class="nav-number">1.3.</span> <span class="nav-text">componentDidMount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillReceiveProps"><span class="nav-number">1.4.</span> <span class="nav-text">componentWillReceiveProps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">1.5.</span> <span class="nav-text">shouldComponentUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillUpdate"><span class="nav-number">1.6.</span> <span class="nav-text">componentWillUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">1.7.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">1.8.</span> <span class="nav-text">componentWillUnmount</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React-生命周期"><span class="nav-number">1.</span> <span class="nav-text">React 生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化阶段"><span class="nav-number">2.</span> <span class="nav-text">初始化阶段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据更新阶段"><span class="nav-number">3.</span> <span class="nav-text">数据更新阶段</span></a></li></ol></div>
             
 
           </div>
