@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JavaScript,promise," />
+  <meta name="keywords" content="javascript,dom," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="keywords" content="JavaScript,promise">
+<meta name="description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt">
+<meta name="keywords" content="javascript,dom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="promise">
-<meta property="og:url" content="https://7zf001.github.io/2018/02/11/promise/index.html">
+<meta property="og:title" content="Javascript 获取 Dom 样式的方法有哪些">
+<meta property="og:url" content="https://7zf001.github.io/2018/04/12/get_width/index.html">
 <meta property="og:site_name" content="Jeff Tam">
+<meta property="og:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;apo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p57xkau1y.bkt.clouddn.com/go_offline_1x.png">
-<meta property="og:updated_time" content="2018-03-07T13:09:24.631Z">
+<meta property="og:updated_time" content="2018-04-12T11:59:19.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="promise">
-<meta name="twitter:image" content="http://p57xkau1y.bkt.clouddn.com/go_offline_1x.png">
+<meta name="twitter:title" content="Javascript 获取 Dom 样式的方法有哪些">
+<meta name="twitter:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;apo">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://7zf001.github.io/2018/02/11/promise/"/>
+  <link rel="canonical" href="https://7zf001.github.io/2018/04/12/get_width/"/>
 
 
 
 
 
-  <title>promise | Jeff Tam</title>
+  <title>Javascript 获取 Dom 样式的方法有哪些 | Jeff Tam</title>
   
 
 
@@ -282,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2018/02/11/promise/">
+    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2018/04/12/get_width/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jeff Tam">
@@ -299,7 +300,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">promise</h2>
+          <h2 class="post-title" itemprop="name headline">Javascript 获取 Dom 样式的方法有哪些</h2>
         
 
         <div class="post-meta">
@@ -311,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T20:20:12+08:00">
-                2018-02-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T18:15:54+08:00">
+                2018-04-12
               </time>
             
 
@@ -334,8 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -352,9 +353,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/11/promise/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/12/get_width/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/11/promise/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/04/12/get_width/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -362,7 +363,7 @@
 
           
           
-             <span id="/2018/02/11/promise/" class="leancloud_visitors" data-flag-title="promise">
+             <span id="/2018/04/12/get_width/" class="leancloud_visitors" data-flag-title="Javascript 获取 Dom 样式的方法有哪些">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,9 +394,103 @@
       
 
       
-        <p><img src="http://p57xkau1y.bkt.clouddn.com/go_offline_1x.png" alt="images"></p>
-<a id="more"></a>
-<h1 id="实现简单的Promise"><a href="#实现简单的Promise" class="headerlink" title="实现简单的Promise"></a>实现简单的Promise</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">function Promise(fn)&#123;</span><br><span class="line">    var status = &apos;pending&apos;</span><br><span class="line">    function successNotify()&#123;</span><br><span class="line">        status = &apos;resolved&apos;</span><br><span class="line">        toDoThen.apply(undefined, arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    function failNotify()&#123;</span><br><span class="line">        status = &apos;rejected&apos;</span><br><span class="line">        toDoThen.apply(undefined, arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    function toDoThen()&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123; // 保证回调是异步执行的</span><br><span class="line">            if(status === &apos;resolved&apos;)&#123;</span><br><span class="line">                for(let i =0; i&lt; successArray.length;i ++)    &#123;</span><br><span class="line">                    successArray[i].apply(undefined, arguments)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else if(status === &apos;rejected&apos;)&#123;</span><br><span class="line">                for(let i =0; i&lt; failArray.length;i ++)    &#123;</span><br><span class="line">                    failArray[i].apply(undefined, arguments)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    var successArray = []</span><br><span class="line">    var failArray = []</span><br><span class="line">    fn.call(undefined, successNotify, failNotify)</span><br><span class="line">    return &#123;</span><br><span class="line">        then: function(successFn, failFn)&#123;</span><br><span class="line">            successArray.push(successFn)</span><br><span class="line">            failArray.push(failFn)</span><br><span class="line">            return undefined // 未实现的链路then</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h1><h2 id="一、element-style-属性"><a href="#一、element-style-属性" class="headerlink" title="一、element.style 属性"></a>一、element.style 属性</h2><p>获取dom元素的style属性</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// index.html</span><br><span class="line">&lt;div id=&quot;el&quot; style=&quot;width:300px&quot;&gt;content&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var el = document.getElementById(&apos;el&apos;)  </span><br><span class="line">console.log(el.style.width) // =&gt; &apos;300px&apos;</span><br><span class="line">console.log(el.style.height) // =&gt; &apos;&apos;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这种方式可获取，也可修改值。优点是兼容性比较好。缺点是有局限性，只能通过写入内联才能获取样式。</p>
+<h2 id="二、element-currentStyle-属性"><a href="#二、element-currentStyle-属性" class="headerlink" title="二、element.currentStyle 属性"></a>二、element.currentStyle 属性</h2><p>只支持IE6~8…..</p>
+<h2 id="三、window-getComputedStyle-element-方法"><a href="#三、window-getComputedStyle-element-方法" class="headerlink" title="三、window.getComputedStyle(element) 方法"></a>三、window.getComputedStyle(element) 方法</h2><p>getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值也可以获取伪类中的属性。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，只读。文章<a href="http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">‘获取元素CSS值之getComputedStyle方法熟悉’</a></p>
+<p>支持IE8以上</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// index.html</span><br><span class="line">&lt;div id=&quot;el&quot; style=&quot;width:300px&quot;&gt;content&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var el = document.getElementById(&apos;el&apos;) </span><br><span class="line">console.log(window.getComputedStyle(element).getPropertyValue(&apos;width&apos;)) // =&gt; &quot;300px&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>jQuery的CSS()方法就是用此方法的，</p>
+<h2 id="四、element-getBoundingClientRect-方法"><a href="#四、element-getBoundingClientRect-方法" class="headerlink" title="四、element.getBoundingClientRect()方法"></a>四、element.getBoundingClientRect()方法</h2><p>相关文章：<br><a href="http://www.zhangxinxu.com/wordpress/2018/02/container-scroll-position-hold/" target="_blank" rel="noopener">小tips: 滚动容器尺寸变化子元素视觉上位置不变JS实现</a></p>
+<h1 id="获取宽度的方法总结"><a href="#获取宽度的方法总结" class="headerlink" title="获取宽度的方法总结"></a>获取宽度的方法总结</h1><p>content-box：</p>
+<table>
+<thead>
+<tr>
+<th>兼容性</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td style="text-align:center">element.style.width</td>
+</tr>
+<tr>
+<td>IE6~8</td>
+<td style="text-align:center">element.currentStyle.width</td>
+</tr>
+<tr>
+<td>IE8以上</td>
+<td style="text-align:center">window.getComputedStyle(element).getPropertyValue(‘width’)</td>
+</tr>
+<tr>
+<td>IE8以上</td>
+<td style="text-align:center">element.getBoundingClientRect().width</td>
+</tr>
+</tbody>
+</table>
+<p>padding-box：</p>
+<table>
+<thead>
+<tr>
+<th>兼容性</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td style="text-align:center">element.clientWidth</td>
+</tr>
+</tbody>
+</table>
+<p>border-box：</p>
+<table>
+<thead>
+<tr>
+<th>兼容性</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td style="text-align:center">element.offsetWidth</td>
+</tr>
+</tbody>
+</table>
+<p>jQuery api:</p>
+<table>
+<thead>
+<tr>
+<th>盒子范围</th>
+<th style="text-align:center">方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content-box</td>
+<td style="text-align:center">$().width()</td>
+</tr>
+<tr>
+<td>padding-box</td>
+<td style="text-align:center">$().innerWidth()</td>
+</tr>
+<tr>
+<td>border-box</td>
+<td style="text-align:center">$().outerWidth()</td>
+</tr>
+<tr>
+<td>margin-box</td>
+<td style="text-align:center">$().outerWidth(true)</td>
+</tr>
+</tbody>
+</table>
+<p>详情：<a href="http://www.zhangxinxu.com/wordpress/2011/09/cssom视图模式cssom-view-module相关整理与介绍/" target="_blank" rel="noopener">cssom视图模式cssom-view-module相关整理与介绍/</a></p>
+
       
     </div>
     
@@ -412,9 +507,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-            <a href="/tags/promise/" rel="tag"># promise</a>
+            <a href="/tags/dom/" rel="tag"># dom</a>
           
         </div>
       
@@ -427,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/31/convert/" rel="next" title="JavaScript 关系运算符与相等运算符强制转换的问题">
-                <i class="fa fa-chevron-left"></i> JavaScript 关系运算符与相等运算符强制转换的问题
+              <a href="/2018/03/13/flex/" rel="next" title="flex 弹性布局详解">
+                <i class="fa fa-chevron-left"></i> flex 弹性布局详解
               </a>
             
           </div>
@@ -436,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/01/deploynode/" rel="prev" title="部署环境 Node + mongodb + nginx">
-                部署环境 Node + mongodb + nginx <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实现简单的Promise"><span class="nav-number">1.</span> <span class="nav-text">实现简单的Promise</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取方法"><span class="nav-number">1.</span> <span class="nav-text">获取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、element-style-属性"><span class="nav-number">1.1.</span> <span class="nav-text">一、element.style 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、element-currentStyle-属性"><span class="nav-number">1.2.</span> <span class="nav-text">二、element.currentStyle 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、window-getComputedStyle-element-方法"><span class="nav-number">1.3.</span> <span class="nav-text">三、window.getComputedStyle(element) 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、element-getBoundingClientRect-方法"><span class="nav-number">1.4.</span> <span class="nav-text">四、element.getBoundingClientRect()方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取宽度的方法总结"><span class="nav-number">2.</span> <span class="nav-text">获取宽度的方法总结</span></a></li></ol></div>
             
 
           </div>
@@ -774,9 +865,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://7zf001.github.io/2018/02/11/promise/';
-          this.page.identifier = '2018/02/11/promise/';
-          this.page.title = 'promise';
+          this.page.url = 'https://7zf001.github.io/2018/04/12/get_width/';
+          this.page.identifier = '2018/04/12/get_width/';
+          this.page.title = 'Javascript 获取 Dom 样式的方法有哪些';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://7zf.disqus.com/embed.js';
