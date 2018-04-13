@@ -100,12 +100,14 @@
 <meta property="og:title" content="Javascript 获取 Dom 样式的方法有哪些">
 <meta property="og:url" content="https://7zf001.github.io/2018/04/12/get_width/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;apo">
+<meta property="og:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T11:59:19.135Z">
+<meta property="og:image" content="http://p57xkau1y.bkt.clouddn.com/dr.png">
+<meta property="og:updated_time" content="2018-04-13T07:52:37.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 获取 Dom 样式的方法有哪些">
-<meta name="twitter:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;apo">
+<meta name="twitter:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;ap">
+<meta name="twitter:image" content="http://p57xkau1y.bkt.clouddn.com/dr.png">
 
 
 
@@ -394,7 +396,8 @@
       
 
       
-        <h1 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h1><h2 id="一、element-style-属性"><a href="#一、element-style-属性" class="headerlink" title="一、element.style 属性"></a>一、element.style 属性</h2><p>获取dom元素的style属性</p>
+        <p><img src="http://p57xkau1y.bkt.clouddn.com/dr.png" alt="出自：https://dribbble.com/shots/4457736-Bring-the-Chocolate-2"></p>
+<h1 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h1><h2 id="一、element-style-属性"><a href="#一、element-style-属性" class="headerlink" title="一、element.style 属性"></a>一、element.style 属性</h2><p>获取dom元素的style属性</p>
 <p>例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// index.html</span><br><span class="line">&lt;div id=&quot;el&quot; style=&quot;width:300px&quot;&gt;content&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var el = document.getElementById(&apos;el&apos;)  </span><br><span class="line">console.log(el.style.width) // =&gt; &apos;300px&apos;</span><br><span class="line">console.log(el.style.height) // =&gt; &apos;&apos;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>这种方式可获取，也可修改值。优点是兼容性比较好。缺点是有局限性，只能通过写入内联才能获取样式。</p>
@@ -462,6 +465,9 @@
 </tr>
 </tbody>
 </table>
+<p>margin-box：<br>没有原生接口直接获取</p>
+<p>计算方法：<br>1、获取元素padding-box宽度<br>2、获取元素margin-left和margin-right大小<br>3、三个数值相加</p>
+<p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var box = document.querySelector(&apos;.box&apos;)</span><br><span class="line">var paddingWidth = box.clientWidth;</span><br><span class="line">var marginLeft = +window.getComputedStyle(box).getPropertyValue(&apos;margin-left&apos;).match(/^\d*/)[0]</span><br><span class="line">var marginRight = +window.getComputedStyle(box).getPropertyValue(&apos;margin-right&apos;).match(/^\d*/)[0]</span><br><span class="line">var res = paddingWidth + marginLeft + marginRight</span><br></pre></td></tr></table></figure></p>
 <p>jQuery api:</p>
 <table>
 <thead>
