@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, JavaScript, React, Vue, 7zf001" />
+  <meta name="keywords" content="css," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="像天上的流云，江河中的流水。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jeff Tam">
-<meta property="og:url" content="https://7zf001.github.io/tags/JSX/index.html">
+<meta name="description" content="clientLeft和clientTop目前理解的是border的宽度 offsetLeft和offsetTop元素的content-box与offsetParent元素之间的距离 scrollLeft和scrollTop滚动元素被卷去的地方，可读可写">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS元素视图属性深入理解">
+<meta property="og:url" content="https://7zf001.github.io/2018/04/13/cssom/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="像天上的流云，江河中的流水。">
+<meta property="og:description" content="clientLeft和clientTop目前理解的是border的宽度 offsetLeft和offsetTop元素的content-box与offsetParent元素之间的距离 scrollLeft和scrollTop滚动元素被卷去的地方，可读可写">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-13T11:36:53.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeff Tam">
-<meta name="twitter:description" content="像天上的流云，江河中的流水。">
+<meta name="twitter:title" content="CSS元素视图属性深入理解">
+<meta name="twitter:description" content="clientLeft和clientTop目前理解的是border的宽度 offsetLeft和offsetTop元素的content-box与offsetParent元素之间的距离 scrollLeft和scrollTop滚动元素被卷去的地方，可读可写">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://7zf001.github.io/tags/JSX/"/>
+  <link rel="canonical" href="https://7zf001.github.io/2018/04/13/cssom/"/>
 
 
 
 
 
-  <title>标签: JSX | Jeff Tam</title>
+  <title>CSS元素视图属性深入理解 | Jeff Tam</title>
   
 
 
@@ -163,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,54 +269,193 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>JSX<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://7zf001.github.io/2018/04/13/cssom/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jeff Tam">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jeff Tam">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/12/07/reactNote/" itemprop="url">
-              
-                <span itemprop="name">JSX - React 笔记</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">CSS元素视图属性深入理解</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-07T13:05:00+08:00"
-              content="2017-12-07" >
-          12-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T15:56:22+08:00">
+                2018-04-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/13/cssom/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/13/cssom/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/04/13/cssom/" class="leancloud_visitors" data-flag-title="CSS元素视图属性深入理解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="clientLeft和clientTop"><a href="#clientLeft和clientTop" class="headerlink" title="clientLeft和clientTop"></a>clientLeft和clientTop</h1><p>目前理解的是border的宽度</p>
+<h1 id="offsetLeft和offsetTop"><a href="#offsetLeft和offsetTop" class="headerlink" title="offsetLeft和offsetTop"></a>offsetLeft和offsetTop</h1><p>元素的content-box与offsetParent元素之间的距离</p>
+<h1 id="scrollLeft和scrollTop"><a href="#scrollLeft和scrollTop" class="headerlink" title="scrollLeft和scrollTop"></a>scrollLeft和scrollTop</h1><p>滚动元素被卷去的地方，可读可写</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/12/get_width/" rel="next" title="Javascript 获取 Dom 样式的方法有哪些">
+                <i class="fa fa-chevron-left"></i> Javascript 获取 Dom 样式的方法有哪些
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -322,6 +463,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -342,8 +494,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/default_avatar.jpg"
@@ -440,6 +601,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#clientLeft和clientTop"><span class="nav-number">1.</span> <span class="nav-text">clientLeft和clientTop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#offsetLeft和offsetTop"><span class="nav-number">2.</span> <span class="nav-text">offsetLeft和offsetTop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scrollLeft和scrollTop"><span class="nav-number">3.</span> <span class="nav-text">scrollLeft和scrollTop</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -569,10 +746,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -590,6 +767,18 @@
       <script id="dsq-count-scr" src="https://7zf.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://7zf001.github.io/2018/04/13/cssom/';
+          this.page.identifier = '2018/04/13/cssom/';
+          this.page.title = 'CSS元素视图属性深入理解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://7zf.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

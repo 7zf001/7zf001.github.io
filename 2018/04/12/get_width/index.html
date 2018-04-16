@@ -94,19 +94,16 @@
 
 
 
-<meta name="description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt">
 <meta name="keywords" content="javascript,dom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript 获取 Dom 样式的方法有哪些">
 <meta property="og:url" content="https://7zf001.github.io/2018/04/12/get_width/index.html">
 <meta property="og:site_name" content="Jeff Tam">
-<meta property="og:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;ap">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p57xkau1y.bkt.clouddn.com/dr.png">
-<meta property="og:updated_time" content="2018-04-13T07:52:37.513Z">
+<meta property="og:updated_time" content="2018-04-13T11:39:34.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 获取 Dom 样式的方法有哪些">
-<meta name="twitter:description" content="获取方法一、element.style 属性获取dom元素的style属性 例子： 12345678// index.html&amp;lt;div id=&amp;quot;el&amp;quot; style=&amp;quot;width:300px&amp;quot;&amp;gt;content&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt;var el = document.getElementById(&amp;apos;el&amp;ap">
 <meta name="twitter:image" content="http://p57xkau1y.bkt.clouddn.com/dr.png">
 
 
@@ -397,6 +394,7 @@
 
       
         <p><img src="http://p57xkau1y.bkt.clouddn.com/dr.png" alt="出自：https://dribbble.com/shots/4457736-Bring-the-Chocolate-2"></p>
+<a id="more"></a>
 <h1 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h1><h2 id="一、element-style-属性"><a href="#一、element-style-属性" class="headerlink" title="一、element.style 属性"></a>一、element.style 属性</h2><p>获取dom元素的style属性</p>
 <p>例子：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// index.html</span><br><span class="line">&lt;div id=&quot;el&quot; style=&quot;width:300px&quot;&gt;content&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var el = document.getElementById(&apos;el&apos;)  </span><br><span class="line">console.log(el.style.width) // =&gt; &apos;300px&apos;</span><br><span class="line">console.log(el.style.height) // =&gt; &apos;&apos;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -405,11 +403,11 @@
 <h2 id="三、window-getComputedStyle-element-方法"><a href="#三、window-getComputedStyle-element-方法" class="headerlink" title="三、window.getComputedStyle(element) 方法"></a>三、window.getComputedStyle(element) 方法</h2><p>getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值也可以获取伪类中的属性。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，只读。文章<a href="http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue-currentstyle/" target="_blank" rel="noopener">‘获取元素CSS值之getComputedStyle方法熟悉’</a></p>
 <p>支持IE8以上</p>
 <p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// index.html</span><br><span class="line">&lt;div id=&quot;el&quot; style=&quot;width:300px&quot;&gt;content&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var el = document.getElementById(&apos;el&apos;) </span><br><span class="line">console.log(window.getComputedStyle(element).getPropertyValue(&apos;width&apos;)) // =&gt; &quot;300px&quot;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var el = document.getElementById(&apos;el&apos;) </span><br><span class="line">console.log(window.getComputedStyle(element).getPropertyValue(&apos;width&apos;))</span><br></pre></td></tr></table></figure>
 <p>jQuery的CSS()方法就是用此方法的，</p>
-<h2 id="四、element-getBoundingClientRect-方法"><a href="#四、element-getBoundingClientRect-方法" class="headerlink" title="四、element.getBoundingClientRect()方法"></a>四、element.getBoundingClientRect()方法</h2><p>相关文章：<br><a href="http://www.zhangxinxu.com/wordpress/2018/02/container-scroll-position-hold/" target="_blank" rel="noopener">小tips: 滚动容器尺寸变化子元素视觉上位置不变JS实现</a></p>
-<h1 id="获取宽度的方法总结"><a href="#获取宽度的方法总结" class="headerlink" title="获取宽度的方法总结"></a>获取宽度的方法总结</h1><p>content-box：</p>
-<table>
+<h2 id="四、element-getBoundingClientRect-方法"><a href="#四、element-getBoundingClientRect-方法" class="headerlink" title="四、element.getBoundingClientRect()方法"></a>四、element.getBoundingClientRect()方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var el = document.getElementById(&apos;el&apos;) </span><br><span class="line">el.getBoundingClientRect().width // 获取宽度</span><br></pre></td></tr></table></figure>
+<p>相关用法文章：<br><a href="http://www.zhangxinxu.com/wordpress/2018/02/container-scroll-position-hold/" target="_blank" rel="noopener">小tips: 滚动容器尺寸变化子元素视觉上位置不变JS实现</a></p>
+<h1 id="获取宽度的方法总结"><a href="#获取宽度的方法总结" class="headerlink" title="获取宽度的方法总结"></a>获取宽度的方法总结</h1><h3 id="content-box："><a href="#content-box：" class="headerlink" title="content-box："></a>content-box：</h3><table>
 <thead>
 <tr>
 <th>兼容性</th>
@@ -418,7 +416,7 @@
 </thead>
 <tbody>
 <tr>
-<td>all</td>
+<td>IE5.5+</td>
 <td style="text-align:center">element.style.width</td>
 </tr>
 <tr>
@@ -435,8 +433,7 @@
 </tr>
 </tbody>
 </table>
-<p>padding-box：</p>
-<table>
+<h3 id="padding-box："><a href="#padding-box：" class="headerlink" title="padding-box："></a>padding-box：</h3><table>
 <thead>
 <tr>
 <th>兼容性</th>
@@ -445,13 +442,16 @@
 </thead>
 <tbody>
 <tr>
-<td>all</td>
+<td>IE5.5+</td>
 <td style="text-align:center">element.clientWidth</td>
+</tr>
+<tr>
+<td>IE5.5+</td>
+<td style="text-align:center">element.scrollWidth</td>
 </tr>
 </tbody>
 </table>
-<p>border-box：</p>
-<table>
+<h3 id="border-box："><a href="#border-box：" class="headerlink" title="border-box："></a>border-box：</h3><table>
 <thead>
 <tr>
 <th>兼容性</th>
@@ -460,16 +460,15 @@
 </thead>
 <tbody>
 <tr>
-<td>all</td>
+<td>IE5.5+</td>
 <td style="text-align:center">element.offsetWidth</td>
 </tr>
 </tbody>
 </table>
-<p>margin-box：<br>没有原生接口直接获取</p>
+<h3 id="margin-box："><a href="#margin-box：" class="headerlink" title="margin-box："></a>margin-box：</h3><p>没有原生接口直接获取</p>
 <p>计算方法：<br>1、获取元素padding-box宽度<br>2、获取元素margin-left和margin-right大小<br>3、三个数值相加</p>
 <p>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var box = document.querySelector(&apos;.box&apos;)</span><br><span class="line">var paddingWidth = box.clientWidth;</span><br><span class="line">var marginLeft = +window.getComputedStyle(box).getPropertyValue(&apos;margin-left&apos;).match(/^\d*/)[0]</span><br><span class="line">var marginRight = +window.getComputedStyle(box).getPropertyValue(&apos;margin-right&apos;).match(/^\d*/)[0]</span><br><span class="line">var res = paddingWidth + marginLeft + marginRight</span><br></pre></td></tr></table></figure></p>
-<p>jQuery api:</p>
-<table>
+<h3 id="jQuery-api"><a href="#jQuery-api" class="headerlink" title="jQuery api:"></a>jQuery api:</h3><table>
 <thead>
 <tr>
 <th>盒子范围</th>
@@ -537,6 +536,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/cssom/" rel="prev" title="CSS元素视图属性深入理解">
+                CSS元素视图属性深入理解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -620,7 +623,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -712,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取方法"><span class="nav-number">1.</span> <span class="nav-text">获取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、element-style-属性"><span class="nav-number">1.1.</span> <span class="nav-text">一、element.style 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、element-currentStyle-属性"><span class="nav-number">1.2.</span> <span class="nav-text">二、element.currentStyle 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、window-getComputedStyle-element-方法"><span class="nav-number">1.3.</span> <span class="nav-text">三、window.getComputedStyle(element) 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、element-getBoundingClientRect-方法"><span class="nav-number">1.4.</span> <span class="nav-text">四、element.getBoundingClientRect()方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取宽度的方法总结"><span class="nav-number">2.</span> <span class="nav-text">获取宽度的方法总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取方法"><span class="nav-number">1.</span> <span class="nav-text">获取方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、element-style-属性"><span class="nav-number">1.1.</span> <span class="nav-text">一、element.style 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、element-currentStyle-属性"><span class="nav-number">1.2.</span> <span class="nav-text">二、element.currentStyle 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、window-getComputedStyle-element-方法"><span class="nav-number">1.3.</span> <span class="nav-text">三、window.getComputedStyle(element) 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、element-getBoundingClientRect-方法"><span class="nav-number">1.4.</span> <span class="nav-text">四、element.getBoundingClientRect()方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取宽度的方法总结"><span class="nav-number">2.</span> <span class="nav-text">获取宽度的方法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#content-box："><span class="nav-number">2.0.1.</span> <span class="nav-text">content-box：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padding-box："><span class="nav-number">2.0.2.</span> <span class="nav-text">padding-box：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#border-box："><span class="nav-number">2.0.3.</span> <span class="nav-text">border-box：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin-box："><span class="nav-number">2.0.4.</span> <span class="nav-text">margin-box：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-api"><span class="nav-number">2.0.5.</span> <span class="nav-text">jQuery api:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
